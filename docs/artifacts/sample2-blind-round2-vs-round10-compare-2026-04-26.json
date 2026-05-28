@@ -1,0 +1,70 @@
+{
+  "clip": "sample 2.mp4",
+  "beforeTopEventChain": "impact/bounce-like -> chop/cut-like -> repeated-tool-use-like -> approval/celebration-like -> repeated-tool-use-like x2 -> fingerspell/emphatic-letter-sequence-like -> big-fall-like x2 -> approval/celebration-like",
+  "afterTopEventChain": "impact/bounce-like -> chop/cut-like x2 -> big-fall-like -> repeated-tool-use-like x2 -> fingerspell/emphatic-letter-sequence-like -> big-fall-like x2 -> fingerspell/emphatic-letter-sequence-like",
+  "beforeFamilyCounts": {
+    "repeated-tool-use-like": 3,
+    "approval/celebration-like": 2,
+    "big-fall-like": 2,
+    "impact/bounce-like": 1,
+    "chop/cut-like": 1,
+    "fingerspell/emphatic-letter-sequence-like": 1
+  },
+  "afterFamilyCounts": {
+    "big-fall-like": 3,
+    "chop/cut-like": 2,
+    "repeated-tool-use-like": 2,
+    "fingerspell/emphatic-letter-sequence-like": 2,
+    "impact/bounce-like": 1
+  },
+  "beforeAverageConfidenceMargin": 0.11110000000000002,
+  "afterAverageConfidenceMargin": 0.14008000000000004,
+  "beforeLikelyConfusionPairs": [
+    {
+      "pair": "chop/cut-like vs repeated-tool-use-like",
+      "count": 3
+    },
+    {
+      "pair": "approval/celebration-like vs big-fall-like",
+      "count": 1
+    },
+    {
+      "pair": "approval/celebration-like vs drink-like",
+      "count": 1
+    },
+    {
+      "pair": "big-fall-like vs drink-like",
+      "count": 1
+    }
+  ],
+  "afterLikelyConfusionPairs": [
+    {
+      "pair": "chop/cut-like vs repeated-tool-use-like",
+      "count": 3
+    },
+    {
+      "pair": "big-fall-like vs drink-like",
+      "count": 1
+    },
+    {
+      "pair": "big-fall-like vs fingerspell/emphatic-letter-sequence-like",
+      "count": 1
+    },
+    {
+      "pair": "big-fall-like vs impact/bounce-like",
+      "count": 1
+    }
+  ],
+  "beforeFailureTagCounts": {
+    "low-confidence-competition": 10,
+    "hand-visibility-weak": 5,
+    "tool-use-vs-release-confusion": 4,
+    "mouth-face-cue-weak": 1
+  },
+  "afterFailureTagCounts": {
+    "low-confidence-competition": 10,
+    "hand-visibility-weak": 5,
+    "tool-use-vs-release-confusion": 5,
+    "mouth-face-cue-weak": 1
+  }
+}

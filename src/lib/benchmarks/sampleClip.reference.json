@@ -1,0 +1,52 @@
+{
+  "clipName": "sample clip.mp4",
+  "source": "local",
+  "notes": "Provisional human reference summary, not exact ASL gloss.",
+  "segments": [
+    {
+      "id": "seg-01",
+      "expected": "story intro / greeting",
+      "conceptIds": ["intro-greeting"]
+    },
+    {
+      "id": "seg-02",
+      "expected": "man with hat and work gear",
+      "conceptIds": ["person-man", "hat", "work-gear"]
+    },
+    {
+      "id": "seg-03",
+      "expected": "walking into forest with axe and lunchbox",
+      "conceptIds": ["walk-go", "forest-trees", "axe", "lunchbox-food"]
+    },
+    {
+      "id": "seg-04",
+      "expected": "chops tree / timber",
+      "conceptIds": ["chop-cut", "forest-trees", "timber-fall"]
+    },
+    {
+      "id": "seg-05",
+      "expected": "bigger tree / timber",
+      "conceptIds": ["big-tree", "timber-fall", "forest-trees"]
+    },
+    {
+      "id": "seg-06",
+      "expected": "sits to eat lunch",
+      "conceptIds": ["eat", "lunchbox-food"]
+    },
+    {
+      "id": "seg-07",
+      "expected": "drinks coffee",
+      "conceptIds": ["drink-coffee"]
+    },
+    {
+      "id": "seg-08",
+      "expected": "eats sandwich / apple",
+      "conceptIds": ["eat", "apple"]
+    },
+    {
+      "id": "seg-09",
+      "expected": "continues / notices enormous tree",
+      "conceptIds": ["continue-go-on", "big-tree", "forest-trees"]
+    }
+  ]
+}

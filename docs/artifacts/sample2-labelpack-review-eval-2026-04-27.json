@@ -1,0 +1,15 @@
+{
+  "packId": "labelpack-sample2-review-round6",
+  "clipName": "sample 2.mp4",
+  "segmentCount": 10,
+  "labeledSegments": 0,
+  "calibrationCount": 0,
+  "holdoutCount": 0,
+  "ignoredCount": 10,
+  "weakOrOccludedCount": 0,
+  "familyMatchRate": 0,
+  "conceptMatchRate": null,
+  "confusionHotspots": [],
+  "uncoveredConcepts": [],
+  "segmentsNeedingLabels": []
+}

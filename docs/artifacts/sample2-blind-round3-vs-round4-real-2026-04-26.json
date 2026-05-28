@@ -1,0 +1,171 @@
+{
+  "baselineClipName": "sample 2.mp4",
+  "currentClipName": "sample 2.mp4",
+  "metrics": {
+    "segmentCount": {
+      "baseline": 10,
+      "current": 10,
+      "delta": 0
+    },
+    "lexemeCount": {
+      "baseline": 11,
+      "current": 11,
+      "delta": 0
+    },
+    "genericUnknownCount": {
+      "baseline": 0,
+      "current": 0,
+      "delta": 0
+    },
+    "eventFamilyDiversity": {
+      "baseline": 4,
+      "current": 5,
+      "delta": 1
+    },
+    "repeatedPatternCount": {
+      "baseline": 1,
+      "current": 1,
+      "delta": 0
+    },
+    "unresolvedSegmentCount": {
+      "baseline": 10,
+      "current": 10,
+      "delta": 0
+    },
+    "averageConfidenceMargin": {
+      "baseline": 0.11023000000000002,
+      "current": 0.14008000000000004,
+      "delta": 0.0299
+    },
+    "refinementCount": {
+      "baseline": 0,
+      "current": 0,
+      "delta": 0
+    }
+  },
+  "familyCounts": [
+    {
+      "label": "big-fall-like",
+      "baseline": 4,
+      "current": 3,
+      "delta": -1
+    },
+    {
+      "label": "chop/cut-like",
+      "baseline": 3,
+      "current": 2,
+      "delta": -1
+    },
+    {
+      "label": "fingerspell/emphatic-letter-sequence-like",
+      "baseline": 2,
+      "current": 2,
+      "delta": 0
+    },
+    {
+      "label": "impact/bounce-like",
+      "baseline": 1,
+      "current": 1,
+      "delta": 0
+    },
+    {
+      "label": "repeated-tool-use-like",
+      "baseline": 0,
+      "current": 2,
+      "delta": 2
+    }
+  ],
+  "focusFamilyCounts": {
+    "fingerspell": {
+      "baseline": 2,
+      "current": 2,
+      "delta": 0
+    },
+    "bigFall": {
+      "baseline": 4,
+      "current": 3,
+      "delta": -1
+    },
+    "approval": {
+      "baseline": 0,
+      "current": 0,
+      "delta": 0
+    }
+  },
+  "failureTagCounts": [
+    {
+      "tag": "hand-visibility-weak",
+      "baseline": 5,
+      "current": 5,
+      "delta": 0
+    },
+    {
+      "tag": "low-confidence-competition",
+      "baseline": 10,
+      "current": 10,
+      "delta": 0
+    },
+    {
+      "tag": "mouth-face-cue-weak",
+      "baseline": 1,
+      "current": 1,
+      "delta": 0
+    },
+    {
+      "tag": "tool-use-vs-release-confusion",
+      "baseline": 3,
+      "current": 5,
+      "delta": 2
+    }
+  ],
+  "likelyConfusionPairs": [
+    {
+      "pair": "big-fall-like vs chop/cut-like",
+      "baseline": 1,
+      "current": 0,
+      "delta": -1
+    },
+    {
+      "pair": "big-fall-like vs drink-like",
+      "baseline": 1,
+      "current": 1,
+      "delta": 0
+    },
+    {
+      "pair": "big-fall-like vs fingerspell/emphatic-letter-sequence-like",
+      "baseline": 1,
+      "current": 1,
+      "delta": 0
+    },
+    {
+      "pair": "big-fall-like vs impact/bounce-like",
+      "baseline": 0,
+      "current": 1,
+      "delta": 1
+    },
+    {
+      "pair": "chop/cut-like vs fingerspell/emphatic-letter-sequence-like",
+      "baseline": 2,
+      "current": 0,
+      "delta": -2
+    },
+    {
+      "pair": "chop/cut-like vs repeated-tool-use-like",
+      "baseline": 0,
+      "current": 3,
+      "delta": 3
+    }
+  ],
+  "topChainDifferences": {
+    "eventFamily": {
+      "baseline": "impact/bounce-like -> chop/cut-like x2 -> big-fall-like -> chop/cut-like -> big-fall-like -> fingerspell/emphatic-letter-sequence-like -> big-fall-like x2 -> fingerspell/emphatic-letter-sequence-like",
+      "current": "impact/bounce-like -> chop/cut-like x2 -> big-fall-like -> repeated-tool-use-like x2 -> fingerspell/emphatic-letter-sequence-like -> big-fall-like x2 -> fingerspell/emphatic-letter-sequence-like",
+      "changed": true
+    },
+    "lexeme": {
+      "baseline": "lexeme-01 x2 -> lexeme-02 -> lexeme-03 -> lexeme-04 -> lexeme-02 -> lexeme-03 -> lexeme-04 -> lexeme-05 x3 -> lexeme-02 -> lexeme-03 -> lexeme-06 -> lexeme-07 -> lexeme-08 x2 -> lexeme-02 -> lexeme-04 -> lexeme-09 x2 -> lexeme-10 x2 -> lexeme-11 x4",
+      "current": "lexeme-01 x2 -> lexeme-02 -> lexeme-03 -> lexeme-04 -> lexeme-02 -> lexeme-03 -> lexeme-04 -> lexeme-05 x3 -> lexeme-02 -> lexeme-03 -> lexeme-06 -> lexeme-07 -> lexeme-08 x2 -> lexeme-02 -> lexeme-04 -> lexeme-09 x2 -> lexeme-10 x2 -> lexeme-11 x4",
+      "changed": false
+    }
+  }
+}

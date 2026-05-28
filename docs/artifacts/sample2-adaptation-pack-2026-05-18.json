@@ -1,0 +1,77 @@
+{
+  "schemaVersion": 1,
+  "exportedAt": "2026-05-18T14:18:34.785Z",
+  "entries": [
+    {
+      "id": "custom-sign-chop-0001",
+      "label": "CHOP",
+      "familyHint": "chop/cut-like",
+      "conceptHint": "tool-action",
+      "notes": "sample-2 demonstration correction (exercise-train-mode.mjs)",
+      "split": "calibration",
+      "exampleCount": 1,
+      "createdAt": "2026-05-18T14:18:34.785Z",
+      "updatedAt": "2026-05-18T14:18:34.785Z"
+    },
+    {
+      "id": "custom-sign-hammer-0002",
+      "label": "HAMMER",
+      "familyHint": "repeated-tool-use-like",
+      "conceptHint": "tool-action",
+      "notes": "sample-2 demonstration correction (exercise-train-mode.mjs)",
+      "split": "calibration",
+      "exampleCount": 1,
+      "createdAt": "2026-05-18T14:18:34.785Z",
+      "updatedAt": "2026-05-18T14:18:34.785Z"
+    },
+    {
+      "id": "custom-sign-fall-down-0003",
+      "label": "FALL-DOWN",
+      "familyHint": "big-fall-like",
+      "conceptHint": "event",
+      "notes": "sample-2 demonstration correction (exercise-train-mode.mjs)",
+      "split": "holdout",
+      "exampleCount": 1,
+      "createdAt": "2026-05-18T14:18:34.785Z",
+      "updatedAt": "2026-05-18T14:18:34.785Z"
+    },
+    {
+      "id": "custom-sign-bounce-0004",
+      "label": "BOUNCE",
+      "familyHint": "impact/bounce-like",
+      "conceptHint": "event",
+      "notes": "sample-2 demonstration correction (exercise-train-mode.mjs)",
+      "split": "calibration",
+      "exampleCount": 1,
+      "createdAt": "2026-05-18T14:18:34.785Z",
+      "updatedAt": "2026-05-18T14:18:34.785Z"
+    },
+    {
+      "id": "custom-sign-spell-name-0005",
+      "label": "SPELL-NAME",
+      "familyHint": "fingerspell/emphatic-letter-sequence-like",
+      "conceptHint": "discourse",
+      "notes": "sample-2 demonstration correction (exercise-train-mode.mjs)",
+      "split": "holdout",
+      "exampleCount": 1,
+      "createdAt": "2026-05-18T14:18:34.785Z",
+      "updatedAt": "2026-05-18T14:18:34.785Z"
+    },
+    {
+      "id": "custom-sign-drink-0006",
+      "label": "DRINK",
+      "familyHint": "drink-like",
+      "conceptHint": "consume",
+      "notes": "sample-2 demonstration correction (exercise-train-mode.mjs)",
+      "split": "calibration",
+      "exampleCount": 1,
+      "createdAt": "2026-05-18T14:18:34.785Z",
+      "updatedAt": "2026-05-18T14:18:34.785Z"
+    }
+  ],
+  "provenance": {
+    "generatedBy": "scripts/exercise-train-mode.mjs",
+    "sourceExport": "docs/artifacts/sample2-blind-after-round5-real-2026-04-26.json",
+    "note": "Hand-authored demo lexicon — not learned from the clip. Used only to exercise the Train-mode adaptation path against the bundled sample-2 blind export."
+  }
+}

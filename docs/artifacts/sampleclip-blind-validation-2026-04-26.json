@@ -1,0 +1,2034 @@
+{
+  "id": "blind-inference-9c5b0908-a1eb-400b-8853-3b308bc904db",
+  "createdAt": "2026-04-26T21:22:49.619Z",
+  "clipName": "sample clip.mp4",
+  "clipDurationMs": 33280,
+  "mode": "blind-inference",
+  "notes": "Blind inference processed 8 landmark segments. Blind inference used on-device landmark extraction with no expected reference text. Current exact recognizer still has 5 known labels. Event-family hypotheses, lexeme clusters, and phase chains come from motion, handshape, placement, pose, timing, mouth, and visibility cues. Frame extraction requested 140 frame(s), analyzed 140, skipped 0.",
+  "candidateSetSize": 5,
+  "segmentHypothesisTranscript": "fingerspell/emphatic-letter-sequence-like / repeated-tool-use-like / chop/cut-like / fingerspell/emphatic-letter-sequence-like / fingerspell/emphatic-letter-sequence-like / big-fall-like / chop/cut-like / fingerspell/emphatic-letter-sequence-like",
+  "segments": [
+    {
+      "id": "seg-01",
+      "startMs": 0,
+      "endMs": 2500,
+      "bestHypothesis": "fingerspell/emphatic-letter-sequence-like",
+      "exactLabelGuess": "yes",
+      "actionHypothesis": "fingerspell/emphatic-letter-sequence-like",
+      "eventFamilyHypothesis": "fingerspell/emphatic-letter-sequence-like",
+      "runnerUpFamily": "impact/bounce-like",
+      "alternatives": [
+        {
+          "label": "impact/bounce-like",
+          "kind": "event-family",
+          "confidence": 0.6204,
+          "reason": "Body bounce and rebound after release favored impact-or-bounce family."
+        },
+        {
+          "label": "person/setup-like",
+          "kind": "event-family",
+          "confidence": 0.6066,
+          "reason": "Frequent discrete shape changes should not collapse into neutral setup family."
+        },
+        {
+          "label": "walk/continue-like",
+          "kind": "event-family",
+          "confidence": 0.4405,
+          "reason": "Horizontal path continuity plus recovery motion favored walk-or-continue."
+        },
+        {
+          "label": "carry/hold-object-like",
+          "kind": "event-family",
+          "confidence": 0.4299,
+          "reason": "Frequent discrete shape changes should not collapse into passive carry family."
+        }
+      ],
+      "confidence": 1,
+      "confidenceMargin": 0.3796,
+      "localTransitionSupport": 0,
+      "debtLabel": "Debt: motion too short",
+      "uncertaintyReason": "I'm not sure. Not enough motion history for reliable known-candidate matching.",
+      "hypothesisReason": "Compact discrete handshape bursts outweighed large-loop tool-use reading.",
+      "evidenceChannels": [
+        "handshape",
+        "motion",
+        "timing"
+      ],
+      "motifClusterId": "motif-01",
+      "lexemeIds": [
+        "lexeme-01",
+        "lexeme-02"
+      ],
+      "repeatedCycleCount": 0,
+      "confidenceBreakdown": {
+        "motion": 0.3015,
+        "handshape": 0.0787,
+        "placement": 0.1042,
+        "pose": 0.2852,
+        "mouthFace": 0.2304
+      },
+      "handshapeChangeStats": {
+        "volatility": 0.8524,
+        "changeCount": 5,
+        "compactBurstScore": 0.8616
+      },
+      "bodyReactionStats": {
+        "torsoDisplacement": 0.1442,
+        "shoulderLift": 0.1517,
+        "headBounce": 0.5485,
+        "armSpreadChange": 1,
+        "reactionAftermathScore": 0.3212
+      },
+      "phaseFamilyVotes": [],
+      "motifTags": [
+        "repeated-compact-handshape-sequence"
+      ],
+      "qualitySignals": {
+        "handVisibleRatio": 0.8125,
+        "faceVisibleRatio": 1,
+        "poseVisibleRatio": 1,
+        "occlusionRatio": 0.1875,
+        "motionEnergy": 0.1097,
+        "mouthStability": 0.9948,
+        "validFrameRatio": 1
+      },
+      "failureTags": [
+        "low-confidence-competition"
+      ],
+      "phases": [
+        {
+          "id": "seg-01-setup-1",
+          "kind": "setup",
+          "role": "setup",
+          "startMs": 0,
+          "endMs": 625,
+          "strokeCount": 0,
+          "confidence": 0.58,
+          "dominantEventFamily": "person/setup-like",
+          "lexemeId": "lexeme-01",
+          "dominantChannels": [
+            "pose",
+            "motion",
+            "mouthFace"
+          ],
+          "confidenceBreakdown": {
+            "motion": 0.2555,
+            "handshape": 0.0667,
+            "placement": 0.1731,
+            "pose": 0.3095,
+            "mouthFace": 0.1953
+          }
+        },
+        {
+          "id": "seg-01-release/fall-2",
+          "kind": "release/fall",
+          "role": "release",
+          "startMs": 2240,
+          "endMs": 2500,
+          "strokeCount": 1,
+          "confidence": 0.7473,
+          "dominantEventFamily": "object-fall-like",
+          "lexemeId": "lexeme-02",
+          "dominantChannels": [
+            "motion",
+            "pose",
+            "mouthFace"
+          ],
+          "confidenceBreakdown": {
+            "motion": 0.3743,
+            "handshape": 0.0587,
+            "placement": 0.0778,
+            "pose": 0.3173,
+            "mouthFace": 0.1719
+          }
+        }
+      ],
+      "refinementChanged": false,
+      "refinedFromFamily": null,
+      "refinementReason": null,
+      "phaseRoleSummary": [
+        "setup",
+        "release"
+      ],
+      "unresolved": true,
+      "debug": {
+        "framesAnalyzed": 16,
+        "skippedFrames": 0,
+        "detectorFailures": 0,
+        "extractorKind": "holistic",
+        "firstTimestampMs": 0,
+        "lastTimestampMs": 2500
+      }
+    },
+    {
+      "id": "seg-02",
+      "startMs": 2666.67,
+      "endMs": 5000,
+      "bestHypothesis": "repeated-tool-use-like",
+      "exactLabelGuess": "hello",
+      "actionHypothesis": "repeated-tool-use-like",
+      "eventFamilyHypothesis": "repeated-tool-use-like",
+      "runnerUpFamily": "chop/cut-like",
+      "alternatives": [
+        {
+          "label": "chop/cut-like",
+          "kind": "event-family",
+          "confidence": 0.6474,
+          "reason": "Repeated action-loop phases supported sharper cut-like family."
+        },
+        {
+          "label": "fingerspell/emphatic-letter-sequence-like",
+          "kind": "event-family",
+          "confidence": 0.583,
+          "reason": "Compact repeated handshape changes with low travel favored fingerspell-or-emphatic-sequence family."
+        },
+        {
+          "label": "approval/celebration-like",
+          "kind": "event-family",
+          "confidence": 0.4932,
+          "reason": "Lifted final pose with visible body reaction favored approval-or-celebration family."
+        },
+        {
+          "label": "carry/hold-object-like",
+          "kind": "event-family",
+          "confidence": 0.4917,
+          "reason": "Lower-motion hold posture away from face favored carry-or-hold-object."
+        }
+      ],
+      "confidence": 0.9986,
+      "confidenceMargin": 0.3512,
+      "localTransitionSupport": 0.16,
+      "debtLabel": "Debt: hand occlusion",
+      "uncertaintyReason": "I'm not sure. Hands or face dropped out of frame too often.",
+      "hypothesisReason": "Neighboring tool-like context agreed with repeated action loop.",
+      "evidenceChannels": [
+        "motion",
+        "handshape",
+        "placement"
+      ],
+      "motifClusterId": null,
+      "lexemeIds": [
+        "lexeme-03",
+        "lexeme-04"
+      ],
+      "repeatedCycleCount": 2,
+      "confidenceBreakdown": {
+        "motion": 0.0728,
+        "handshape": 0.1398,
+        "placement": 0.1653,
+        "pose": 0.2856,
+        "mouthFace": 0.3366
+      },
+      "handshapeChangeStats": {
+        "volatility": 0.6807,
+        "changeCount": 5,
+        "compactBurstScore": 0.8303
+      },
+      "bodyReactionStats": {
+        "torsoDisplacement": 0.1308,
+        "shoulderLift": 0.198,
+        "headBounce": 0.6258,
+        "armSpreadChange": 0.4068,
+        "reactionAftermathScore": 0.2476
+      },
+      "phaseFamilyVotes": [],
+      "motifTags": [
+        "repeated-action-loop",
+        "repeated-compact-handshape-sequence"
+      ],
+      "qualitySignals": {
+        "handVisibleRatio": 0.6,
+        "faceVisibleRatio": 1,
+        "poseVisibleRatio": 1,
+        "occlusionRatio": 0.4,
+        "motionEnergy": 0.1732,
+        "mouthStability": 0.9875,
+        "validFrameRatio": 1
+      },
+      "failureTags": [
+        "hand-visibility-weak",
+        "tool-use-vs-release-confusion",
+        "low-confidence-competition"
+      ],
+      "phases": [
+        {
+          "id": "seg-02-setup-1",
+          "kind": "setup",
+          "role": "setup",
+          "startMs": 2666.67,
+          "endMs": 3250.0025,
+          "strokeCount": 0,
+          "confidence": 0.58,
+          "dominantEventFamily": "repeated-tool-use-like",
+          "lexemeId": "lexeme-03",
+          "dominantChannels": [
+            "pose",
+            "mouthFace",
+            "placement"
+          ],
+          "confidenceBreakdown": {
+            "motion": 0.0617,
+            "handshape": 0.1185,
+            "placement": 0.2248,
+            "pose": 0.3098,
+            "mouthFace": 0.2852
+          }
+        },
+        {
+          "id": "seg-02-repeated-action-loop-2",
+          "kind": "repeated-action-loop",
+          "role": "peak-action",
+          "startMs": 3830.0015000000003,
+          "endMs": 4780,
+          "strokeCount": 2,
+          "confidence": 0.7216,
+          "dominantEventFamily": "chop/cut-like",
+          "lexemeId": "lexeme-04",
+          "dominantChannels": [
+            "motion",
+            "mouthFace",
+            "pose"
+          ],
+          "confidenceBreakdown": {
+            "motion": 0.252,
+            "handshape": 0.1856,
+            "placement": 0.1181,
+            "pose": 0.204,
+            "mouthFace": 0.2404
+          }
+        },
+        {
+          "id": "seg-02-hold-3",
+          "kind": "hold",
+          "role": "hold",
+          "startMs": 4740,
+          "endMs": 5000,
+          "strokeCount": 0,
+          "confidence": 0.7216,
+          "dominantEventFamily": "repeated-tool-use-like",
+          "lexemeId": "lexeme-03",
+          "dominantChannels": [
+            "mouthFace",
+            "handshape",
+            "pose"
+          ],
+          "confidenceBreakdown": {
+            "motion": 0.052,
+            "handshape": 0.2141,
+            "placement": 0.2038,
+            "pose": 0.204,
+            "mouthFace": 0.3261
+          }
+        }
+      ],
+      "refinementChanged": false,
+      "refinedFromFamily": null,
+      "refinementReason": null,
+      "phaseRoleSummary": [
+        "setup",
+        "peak-action",
+        "hold"
+      ],
+      "unresolved": true,
+      "debug": {
+        "framesAnalyzed": 15,
+        "skippedFrames": 0,
+        "detectorFailures": 0,
+        "extractorKind": "holistic",
+        "firstTimestampMs": 2666.67,
+        "lastTimestampMs": 5000
+      }
+    },
+    {
+      "id": "seg-03",
+      "startMs": 5166.67,
+      "endMs": 8500,
+      "bestHypothesis": "chop/cut-like",
+      "exactLabelGuess": "hello",
+      "actionHypothesis": "chop/cut-like",
+      "eventFamilyHypothesis": "chop/cut-like",
+      "runnerUpFamily": "fingerspell/emphatic-letter-sequence-like",
+      "alternatives": [
+        {
+          "label": "fingerspell/emphatic-letter-sequence-like",
+          "kind": "event-family",
+          "confidence": 0.9643,
+          "reason": "Many discrete compact handshape changes strongly favored fingerspell-or-emphatic-sequence family."
+        },
+        {
+          "label": "repeated-tool-use-like",
+          "kind": "event-family",
+          "confidence": 0.8257,
+          "reason": "Neighboring tool-like context agreed with repeated action loop."
+        },
+        {
+          "label": "drink-like",
+          "kind": "event-family",
+          "confidence": 0.5757,
+          "reason": "No mouth-adjacent approach or hold support, so drink-like score should decay."
+        },
+        {
+          "label": "carry/hold-object-like",
+          "kind": "event-family",
+          "confidence": 0.5071,
+          "reason": "Lower-motion hold posture away from face favored carry-or-hold-object."
+        }
+      ],
+      "confidence": 1,
+      "confidenceMargin": 0.0357,
+      "localTransitionSupport": 0.16,
+      "debtLabel": "Debt: hand occlusion",
+      "uncertaintyReason": "I'm not sure. Required landmarks are missing or unstable.",
+      "hypothesisReason": "Repeated action-loop phases supported sharper cut-like family.",
+      "evidenceChannels": [
+        "motion",
+        "timing",
+        "handshape"
+      ],
+      "motifClusterId": "motif-01",
+      "lexemeIds": [
+        "lexeme-05",
+        "lexeme-04"
+      ],
+      "repeatedCycleCount": 2,
+      "confidenceBreakdown": {
+        "motion": 0.2104,
+        "handshape": 0.1665,
+        "placement": 0.1152,
+        "pose": 0.2171,
+        "mouthFace": 0.2907
+      },
+      "handshapeChangeStats": {
+        "volatility": 0.7536,
+        "changeCount": 6,
+        "compactBurstScore": 0.8359
+      },
+      "bodyReactionStats": {
+        "torsoDisplacement": 0.3058,
+        "shoulderLift": 0.3333,
+        "headBounce": 0.8223,
+        "armSpreadChange": 0.9689,
+        "reactionAftermathScore": 0.4102
+      },
+      "phaseFamilyVotes": [
+        {
+          "label": "repeated-tool-use-like",
+          "score": 0.26
+        },
+        {
+          "label": "chop/cut-like",
+          "score": 0.24
+        }
+      ],
+      "motifTags": [
+        "repeated-action-loop",
+        "repeated-compact-handshape-sequence",
+        "impact-rebound"
+      ],
+      "qualitySignals": {
+        "handVisibleRatio": 0.619,
+        "faceVisibleRatio": 1,
+        "poseVisibleRatio": 1,
+        "occlusionRatio": 0.25,
+        "motionEnergy": 0.0517,
+        "mouthStability": 0.9998,
+        "validFrameRatio": 1
+      },
+      "failureTags": [
+        "hand-visibility-weak",
+        "low-confidence-competition"
+      ],
+      "phases": [
+        {
+          "id": "seg-03-setup-1",
+          "kind": "setup",
+          "role": "setup",
+          "startMs": 5166.67,
+          "endMs": 6000.0025000000005,
+          "strokeCount": 0,
+          "confidence": 0.58,
+          "dominantEventFamily": "person/setup-like",
+          "lexemeId": "lexeme-05",
+          "dominantChannels": [
+            "pose",
+            "mouthFace",
+            "placement"
+          ],
+          "confidenceBreakdown": {
+            "motion": 0.1783,
+            "handshape": 0.1411,
+            "placement": 0.1824,
+            "pose": 0.2518,
+            "mouthFace": 0.2464
+          }
+        },
+        {
+          "id": "seg-03-repeated-action-loop-2",
+          "kind": "repeated-action-loop",
+          "role": "peak-action",
+          "startMs": 6880.0015,
+          "endMs": 8280,
+          "strokeCount": 2,
+          "confidence": 0.7785,
+          "dominantEventFamily": "person/setup-like",
+          "lexemeId": "lexeme-04",
+          "dominantChannels": [
+            "motion",
+            "mouthFace",
+            "handshape"
+          ],
+          "confidenceBreakdown": {
+            "motion": 0.3503,
+            "handshape": 0.2047,
+            "placement": 0.0823,
+            "pose": 0.1551,
+            "mouthFace": 0.2077
+          }
+        },
+        {
+          "id": "seg-03-release/fall-3",
+          "kind": "release/fall",
+          "role": "release",
+          "startMs": 8240,
+          "endMs": 8500,
+          "strokeCount": 1,
+          "confidence": 0.7785,
+          "dominantEventFamily": "object-fall-like",
+          "lexemeId": "lexeme-05",
+          "dominantChannels": [
+            "motion",
+            "pose",
+            "mouthFace"
+          ],
+          "confidenceBreakdown": {
+            "motion": 0.3063,
+            "handshape": 0.1243,
+            "placement": 0.086,
+            "pose": 0.2665,
+            "mouthFace": 0.217
+          }
+        }
+      ],
+      "refinementChanged": false,
+      "refinedFromFamily": null,
+      "refinementReason": null,
+      "phaseRoleSummary": [
+        "setup",
+        "peak-action",
+        "release"
+      ],
+      "unresolved": true,
+      "debug": {
+        "framesAnalyzed": 21,
+        "skippedFrames": 0,
+        "detectorFailures": 0,
+        "extractorKind": "holistic",
+        "firstTimestampMs": 5166.67,
+        "lastTimestampMs": 8500
+      }
+    },
+    {
+      "id": "seg-04",
+      "startMs": 8666.67,
+      "endMs": 12166.67,
+      "bestHypothesis": "fingerspell/emphatic-letter-sequence-like",
+      "exactLabelGuess": "hello",
+      "actionHypothesis": "fingerspell/emphatic-letter-sequence-like",
+      "eventFamilyHypothesis": "fingerspell/emphatic-letter-sequence-like",
+      "runnerUpFamily": "impact/bounce-like",
+      "alternatives": [
+        {
+          "label": "impact/bounce-like",
+          "kind": "event-family",
+          "confidence": 0.5934,
+          "reason": "Body bounce and rebound after release favored impact-or-bounce family."
+        },
+        {
+          "label": "drink-like",
+          "kind": "event-family",
+          "confidence": 0.5807,
+          "reason": "No mouth-adjacent approach or hold support, so drink-like score should decay."
+        },
+        {
+          "label": "inspect/listen-like",
+          "kind": "event-family",
+          "confidence": 0.5668,
+          "reason": "Sustained attention hold near face or ear favored inspect-or-listen family."
+        },
+        {
+          "label": "person/setup-like",
+          "kind": "event-family",
+          "confidence": 0.4974,
+          "reason": "Dense compact shape changes reduced neutral setup reading."
+        }
+      ],
+      "confidence": 1,
+      "confidenceMargin": 0.4066,
+      "localTransitionSupport": 0,
+      "debtLabel": "Debt: motion too short",
+      "uncertaintyReason": "I'm not sure. Not enough motion history for reliable known-candidate matching.",
+      "hypothesisReason": "Many discrete compact handshape changes strongly favored fingerspell-or-emphatic-sequence family.",
+      "evidenceChannels": [
+        "handshape",
+        "motion",
+        "timing"
+      ],
+      "motifClusterId": "motif-01",
+      "lexemeIds": [
+        "lexeme-03",
+        "lexeme-05"
+      ],
+      "repeatedCycleCount": 0,
+      "confidenceBreakdown": {
+        "motion": 0.129,
+        "handshape": 0.1335,
+        "placement": 0.1424,
+        "pose": 0.3168,
+        "mouthFace": 0.2783
+      },
+      "handshapeChangeStats": {
+        "volatility": 0.7965,
+        "changeCount": 8,
+        "compactBurstScore": 0.8471
+      },
+      "bodyReactionStats": {
+        "torsoDisplacement": 0.1508,
+        "shoulderLift": 0.2034,
+        "headBounce": 0.642,
+        "armSpreadChange": 0.7801,
+        "reactionAftermathScore": 0.3023
+      },
+      "phaseFamilyVotes": [],
+      "motifTags": [
+        "repeated-compact-handshape-sequence"
+      ],
+      "qualitySignals": {
+        "handVisibleRatio": 0.7273,
+        "faceVisibleRatio": 1,
+        "poseVisibleRatio": 1,
+        "occlusionRatio": 0.3125,
+        "motionEnergy": 0.0394,
+        "mouthStability": 0.9986,
+        "validFrameRatio": 1
+      },
+      "failureTags": [
+        "hand-visibility-weak",
+        "low-confidence-competition"
+      ],
+      "phases": [
+        {
+          "id": "seg-04-setup-1",
+          "kind": "setup",
+          "role": "setup",
+          "startMs": 8666.67,
+          "endMs": 9541.67,
+          "strokeCount": 0,
+          "confidence": 0.58,
+          "dominantEventFamily": "person/setup-like",
+          "lexemeId": "lexeme-03",
+          "dominantChannels": [
+            "pose",
+            "mouthFace",
+            "placement"
+          ],
+          "confidenceBreakdown": {
+            "motion": 0.1093,
+            "handshape": 0.1131,
+            "placement": 0.2054,
+            "pose": 0.3363,
+            "mouthFace": 0.2358
+          }
+        },
+        {
+          "id": "seg-04-release/fall-2",
+          "kind": "release/fall",
+          "role": "release",
+          "startMs": 11906.67,
+          "endMs": 12166.67,
+          "strokeCount": 1,
+          "confidence": 0.7795,
+          "dominantEventFamily": "object-fall-like",
+          "lexemeId": "lexeme-05",
+          "dominantChannels": [
+            "pose",
+            "motion",
+            "mouthFace"
+          ],
+          "confidenceBreakdown": {
+            "motion": 0.2455,
+            "handshape": 0.0996,
+            "placement": 0.1063,
+            "pose": 0.3409,
+            "mouthFace": 0.2077
+          }
+        }
+      ],
+      "refinementChanged": false,
+      "refinedFromFamily": null,
+      "refinementReason": null,
+      "phaseRoleSummary": [
+        "setup",
+        "release"
+      ],
+      "unresolved": true,
+      "debug": {
+        "framesAnalyzed": 22,
+        "skippedFrames": 0,
+        "detectorFailures": 0,
+        "extractorKind": "holistic",
+        "firstTimestampMs": 8666.67,
+        "lastTimestampMs": 12166.67
+      }
+    },
+    {
+      "id": "seg-05",
+      "startMs": 12333.33,
+      "endMs": 15833.33,
+      "bestHypothesis": "fingerspell/emphatic-letter-sequence-like",
+      "exactLabelGuess": "hello",
+      "actionHypothesis": "fingerspell/emphatic-letter-sequence-like",
+      "eventFamilyHypothesis": "fingerspell/emphatic-letter-sequence-like",
+      "runnerUpFamily": "drink-like",
+      "alternatives": [
+        {
+          "label": "drink-like",
+          "kind": "event-family",
+          "confidence": 0.9365,
+          "reason": "Sustained mouth-adjacent hold outweighed travel fallback."
+        },
+        {
+          "label": "impact/bounce-like",
+          "kind": "event-family",
+          "confidence": 0.789,
+          "reason": "Body bounce and rebound after release favored impact-or-bounce family."
+        },
+        {
+          "label": "approval/celebration-like",
+          "kind": "event-family",
+          "confidence": 0.7089,
+          "reason": "Lifted final pose with visible body reaction favored approval-or-celebration family."
+        },
+        {
+          "label": "person/setup-like",
+          "kind": "event-family",
+          "confidence": 0.5859,
+          "reason": "Dense compact shape changes reduced neutral setup reading."
+        }
+      ],
+      "confidence": 1,
+      "confidenceMargin": 0.0635,
+      "localTransitionSupport": 0,
+      "debtLabel": "Debt: hand occlusion",
+      "uncertaintyReason": "I'm not sure. Required landmarks are missing or unstable.",
+      "hypothesisReason": "Many discrete compact handshape changes strongly favored fingerspell-or-emphatic-sequence family.",
+      "evidenceChannels": [
+        "handshape",
+        "motion",
+        "timing"
+      ],
+      "motifClusterId": "motif-01",
+      "lexemeIds": [
+        "lexeme-06"
+      ],
+      "repeatedCycleCount": 0,
+      "confidenceBreakdown": {
+        "motion": 0.2801,
+        "handshape": 0.0674,
+        "placement": 0.1668,
+        "pose": 0.2801,
+        "mouthFace": 0.2057
+      },
+      "handshapeChangeStats": {
+        "volatility": 0.9822,
+        "changeCount": 8,
+        "compactBurstScore": 0.8954
+      },
+      "bodyReactionStats": {
+        "torsoDisplacement": 0.3713,
+        "shoulderLift": 0.5857,
+        "headBounce": 0.9689,
+        "armSpreadChange": 1,
+        "reactionAftermathScore": 0.465
+      },
+      "phaseFamilyVotes": [],
+      "motifTags": [
+        "repeated-compact-handshape-sequence",
+        "impact-rebound"
+      ],
+      "qualitySignals": {
+        "handVisibleRatio": 0.5909,
+        "faceVisibleRatio": 1,
+        "poseVisibleRatio": 1,
+        "occlusionRatio": 0.25,
+        "motionEnergy": 0.132,
+        "mouthStability": 0.9997,
+        "validFrameRatio": 1
+      },
+      "failureTags": [
+        "hand-visibility-weak",
+        "low-confidence-competition"
+      ],
+      "phases": [
+        {
+          "id": "seg-05-setup-1",
+          "kind": "setup",
+          "role": "setup",
+          "startMs": 12333.33,
+          "endMs": 13208.33,
+          "strokeCount": 0,
+          "confidence": 0.58,
+          "dominantEventFamily": "person/setup-like",
+          "lexemeId": "lexeme-06",
+          "dominantChannels": [
+            "pose",
+            "motion",
+            "placement"
+          ],
+          "confidenceBreakdown": {
+            "motion": 0.2374,
+            "handshape": 0.0571,
+            "placement": 0.2261,
+            "pose": 0.3051,
+            "mouthFace": 0.1743
+          }
+        },
+        {
+          "id": "seg-05-approach-2",
+          "kind": "approach",
+          "role": "setup",
+          "startMs": 13208.33,
+          "endMs": 14138.33,
+          "strokeCount": 0,
+          "confidence": 0.62,
+          "dominantEventFamily": "drink-like",
+          "lexemeId": "lexeme-06",
+          "dominantChannels": [
+            "pose",
+            "motion",
+            "placement"
+          ],
+          "confidenceBreakdown": {
+            "motion": 0.2374,
+            "handshape": 0.0571,
+            "placement": 0.2261,
+            "pose": 0.3051,
+            "mouthFace": 0.1743
+          }
+        },
+        {
+          "id": "seg-05-hold-3",
+          "kind": "hold",
+          "role": "hold",
+          "startMs": 14178.33,
+          "endMs": 15653.33,
+          "strokeCount": 0,
+          "confidence": 0.8344,
+          "dominantEventFamily": "hold-round-object-like",
+          "lexemeId": "lexeme-06",
+          "dominantChannels": [
+            "mouthFace",
+            "placement",
+            "motion"
+          ],
+          "confidenceBreakdown": {
+            "motion": 0.2001,
+            "handshape": 0.1624,
+            "placement": 0.2048,
+            "pose": 0.2001,
+            "mouthFace": 0.2326
+          }
+        },
+        {
+          "id": "seg-05-hold-4",
+          "kind": "hold",
+          "role": "hold",
+          "startMs": 15573.33,
+          "endMs": 15833.33,
+          "strokeCount": 0,
+          "confidence": 0.8344,
+          "dominantEventFamily": "drink-like",
+          "lexemeId": "lexeme-06",
+          "dominantChannels": [
+            "mouthFace",
+            "placement",
+            "motion"
+          ],
+          "confidenceBreakdown": {
+            "motion": 0.2001,
+            "handshape": 0.1624,
+            "placement": 0.2048,
+            "pose": 0.2001,
+            "mouthFace": 0.2326
+          }
+        }
+      ],
+      "refinementChanged": false,
+      "refinedFromFamily": null,
+      "refinementReason": null,
+      "phaseRoleSummary": [
+        "setup",
+        "hold"
+      ],
+      "unresolved": true,
+      "debug": {
+        "framesAnalyzed": 22,
+        "skippedFrames": 0,
+        "detectorFailures": 0,
+        "extractorKind": "holistic",
+        "firstTimestampMs": 12333.33,
+        "lastTimestampMs": 15833.33
+      }
+    },
+    {
+      "id": "seg-06",
+      "startMs": 16000,
+      "endMs": 17333.33,
+      "bestHypothesis": "big-fall-like",
+      "exactLabelGuess": "thank-you",
+      "actionHypothesis": "big-fall-like",
+      "eventFamilyHypothesis": "big-fall-like",
+      "runnerUpFamily": "impact/bounce-like",
+      "alternatives": [
+        {
+          "label": "impact/bounce-like",
+          "kind": "event-family",
+          "confidence": 0.9954,
+          "reason": "Rebound body motion reinforced impact-like reading over compact sequence."
+        },
+        {
+          "label": "fingerspell/emphatic-letter-sequence-like",
+          "kind": "event-family",
+          "confidence": 0.82,
+          "reason": "Compact bursts should decay when release aftermath and rebound dominate the segment."
+        },
+        {
+          "label": "drink-like",
+          "kind": "event-family",
+          "confidence": 0.5818,
+          "reason": "No mouth-adjacent approach or hold support, so drink-like score should decay."
+        },
+        {
+          "label": "person/setup-like",
+          "kind": "event-family",
+          "confidence": 0.4332,
+          "reason": "Dense compact shape changes reduced neutral setup reading."
+        }
+      ],
+      "confidence": 0.9907,
+      "confidenceMargin": 0,
+      "localTransitionSupport": 0,
+      "debtLabel": "Debt: motion too short",
+      "uncertaintyReason": "I'm not sure. Not enough motion history for reliable known-candidate matching.",
+      "hypothesisReason": "Strong rebound aftermath with weak end-state stabilization favored big-fall family.",
+      "evidenceChannels": [
+        "motion",
+        "pose",
+        "timing"
+      ],
+      "motifClusterId": null,
+      "lexemeIds": [
+        "lexeme-03",
+        "lexeme-07"
+      ],
+      "repeatedCycleCount": 0,
+      "confidenceBreakdown": {
+        "motion": 0.1353,
+        "handshape": 0.148,
+        "placement": 0.1317,
+        "pose": 0.2356,
+        "mouthFace": 0.3495
+      },
+      "handshapeChangeStats": {
+        "volatility": 0.9191,
+        "changeCount": 6,
+        "compactBurstScore": 0.8835
+      },
+      "bodyReactionStats": {
+        "torsoDisplacement": 0.0918,
+        "shoulderLift": 0.1469,
+        "headBounce": 0.8422,
+        "armSpreadChange": 1,
+        "reactionAftermathScore": 0.3736
+      },
+      "phaseFamilyVotes": [
+        {
+          "label": "fingerspell/emphatic-letter-sequence-like",
+          "score": 0.32
+        }
+      ],
+      "motifTags": [
+        "repeated-compact-handshape-sequence"
+      ],
+      "qualitySignals": {
+        "handVisibleRatio": 0.8889,
+        "faceVisibleRatio": 1,
+        "poseVisibleRatio": 1,
+        "occlusionRatio": 0.1111,
+        "motionEnergy": 0.0534,
+        "mouthStability": 0.9996,
+        "validFrameRatio": 1
+      },
+      "failureTags": [
+        "tool-use-vs-release-confusion",
+        "low-confidence-competition"
+      ],
+      "phases": [
+        {
+          "id": "seg-06-setup-1",
+          "kind": "setup",
+          "role": "setup",
+          "startMs": 16000,
+          "endMs": 16333.3325,
+          "strokeCount": 0,
+          "confidence": 0.58,
+          "dominantEventFamily": "impact/bounce-like",
+          "lexemeId": "lexeme-03",
+          "dominantChannels": [
+            "mouthFace",
+            "pose",
+            "placement"
+          ],
+          "confidenceBreakdown": {
+            "motion": 0.1147,
+            "handshape": 0.1254,
+            "placement": 0.1963,
+            "pose": 0.2674,
+            "mouthFace": 0.2962
+          }
+        },
+        {
+          "id": "seg-06-release/fall-2",
+          "kind": "release/fall",
+          "role": "release",
+          "startMs": 17073.33,
+          "endMs": 17333.33,
+          "strokeCount": 1,
+          "confidence": 0.7397,
+          "dominantEventFamily": "object-fall-like",
+          "lexemeId": "lexeme-07",
+          "dominantChannels": [
+            "pose",
+            "mouthFace",
+            "motion"
+          ],
+          "confidenceBreakdown": {
+            "motion": 0.2502,
+            "handshape": 0.1104,
+            "placement": 0.0983,
+            "pose": 0.2803,
+            "mouthFace": 0.2608
+          }
+        }
+      ],
+      "refinementChanged": false,
+      "refinedFromFamily": null,
+      "refinementReason": null,
+      "phaseRoleSummary": [
+        "setup",
+        "release"
+      ],
+      "unresolved": true,
+      "debug": {
+        "framesAnalyzed": 9,
+        "skippedFrames": 0,
+        "detectorFailures": 0,
+        "extractorKind": "holistic",
+        "firstTimestampMs": 16000,
+        "lastTimestampMs": 17333.33
+      }
+    },
+    {
+      "id": "seg-07",
+      "startMs": 17500,
+      "endMs": 20666.67,
+      "bestHypothesis": "chop/cut-like",
+      "exactLabelGuess": "hello",
+      "actionHypothesis": "chop/cut-like",
+      "eventFamilyHypothesis": "chop/cut-like",
+      "runnerUpFamily": "repeated-tool-use-like",
+      "alternatives": [
+        {
+          "label": "repeated-tool-use-like",
+          "kind": "event-family",
+          "confidence": 0.9872,
+          "reason": "Neighboring tool-like context agreed with repeated action loop."
+        },
+        {
+          "label": "fingerspell/emphatic-letter-sequence-like",
+          "kind": "event-family",
+          "confidence": 0.9468,
+          "reason": "Many discrete compact handshape changes strongly favored fingerspell-or-emphatic-sequence family."
+        },
+        {
+          "label": "eat-like",
+          "kind": "event-family",
+          "confidence": 0.781,
+          "reason": "Repeated mouth approaches outweighed sustained sip-like hold."
+        },
+        {
+          "label": "drink-like",
+          "kind": "event-family",
+          "confidence": 0.5904,
+          "reason": "Repeated approach pattern pulled away from sustained drink-like hold."
+        }
+      ],
+      "confidence": 1,
+      "confidenceMargin": 0.0128,
+      "localTransitionSupport": 0.16,
+      "debtLabel": "Debt: motion too short",
+      "uncertaintyReason": "I'm not sure. Not enough motion history for reliable known-candidate matching.",
+      "hypothesisReason": "Repeated action-loop phases supported sharper cut-like family.",
+      "evidenceChannels": [
+        "motion",
+        "timing",
+        "handshape"
+      ],
+      "motifClusterId": "motif-01",
+      "lexemeIds": [
+        "lexeme-08"
+      ],
+      "repeatedCycleCount": 2,
+      "confidenceBreakdown": {
+        "motion": 0.0496,
+        "handshape": 0.1737,
+        "placement": 0.2395,
+        "pose": 0.2388,
+        "mouthFace": 0.2984
+      },
+      "handshapeChangeStats": {
+        "volatility": 0.618,
+        "changeCount": 8,
+        "compactBurstScore": 0.8135
+      },
+      "bodyReactionStats": {
+        "torsoDisplacement": 0.3145,
+        "shoulderLift": 0.4369,
+        "headBounce": 0.6624,
+        "armSpreadChange": 0.8253,
+        "reactionAftermathScore": 0.3717
+      },
+      "phaseFamilyVotes": [
+        {
+          "label": "repeated-tool-use-like",
+          "score": 0.26
+        },
+        {
+          "label": "chop/cut-like",
+          "score": 0.24
+        }
+      ],
+      "motifTags": [
+        "repeated-action-loop",
+        "repeated-compact-handshape-sequence"
+      ],
+      "qualitySignals": {
+        "handVisibleRatio": 1,
+        "faceVisibleRatio": 1,
+        "poseVisibleRatio": 1,
+        "occlusionRatio": 0,
+        "motionEnergy": 0.0591,
+        "mouthStability": 0.9999,
+        "validFrameRatio": 1
+      },
+      "failureTags": [
+        "tool-use-vs-release-confusion",
+        "low-confidence-competition"
+      ],
+      "phases": [
+        {
+          "id": "seg-07-setup-1",
+          "kind": "setup",
+          "role": "setup",
+          "startMs": 17500,
+          "endMs": 18291.6675,
+          "strokeCount": 0,
+          "confidence": 0.58,
+          "dominantEventFamily": "person/setup-like",
+          "lexemeId": "lexeme-08",
+          "dominantChannels": [
+            "placement",
+            "pose",
+            "mouthFace"
+          ],
+          "confidenceBreakdown": {
+            "motion": 0.042,
+            "handshape": 0.1472,
+            "placement": 0.2877,
+            "pose": 0.2702,
+            "mouthFace": 0.2529
+          }
+        },
+        {
+          "id": "seg-07-approach-2",
+          "kind": "approach",
+          "role": "setup",
+          "startMs": 18291.6675,
+          "endMs": 19121.6685,
+          "strokeCount": 0,
+          "confidence": 0.62,
+          "dominantEventFamily": "person/setup-like",
+          "lexemeId": "lexeme-08",
+          "dominantChannels": [
+            "placement",
+            "pose",
+            "mouthFace"
+          ],
+          "confidenceBreakdown": {
+            "motion": 0.042,
+            "handshape": 0.1472,
+            "placement": 0.2877,
+            "pose": 0.2702,
+            "mouthFace": 0.2529
+          }
+        },
+        {
+          "id": "seg-07-repeated-action-loop-3",
+          "kind": "repeated-action-loop",
+          "role": "peak-action",
+          "startMs": 19121.6685,
+          "endMs": 20446.67,
+          "strokeCount": 2,
+          "confidence": 0.7849,
+          "dominantEventFamily": "person/setup-like",
+          "lexemeId": "lexeme-08",
+          "dominantChannels": [
+            "motion",
+            "mouthFace",
+            "handshape"
+          ],
+          "confidenceBreakdown": {
+            "motion": 0.2354,
+            "handshape": 0.2098,
+            "placement": 0.1711,
+            "pose": 0.1706,
+            "mouthFace": 0.2131
+          }
+        },
+        {
+          "id": "seg-07-release/fall-4",
+          "kind": "release/fall",
+          "role": "release",
+          "startMs": 20406.67,
+          "endMs": 20666.67,
+          "strokeCount": 1,
+          "confidence": 0.7849,
+          "dominantEventFamily": "discard/throw-away-like",
+          "lexemeId": "lexeme-08",
+          "dominantChannels": [
+            "pose",
+            "mouthFace",
+            "motion"
+          ],
+          "confidenceBreakdown": {
+            "motion": 0.1863,
+            "handshape": 0.1296,
+            "placement": 0.1787,
+            "pose": 0.2827,
+            "mouthFace": 0.2227
+          }
+        }
+      ],
+      "refinementChanged": false,
+      "refinedFromFamily": null,
+      "refinementReason": null,
+      "phaseRoleSummary": [
+        "setup",
+        "peak-action",
+        "release"
+      ],
+      "unresolved": true,
+      "debug": {
+        "framesAnalyzed": 20,
+        "skippedFrames": 0,
+        "detectorFailures": 0,
+        "extractorKind": "holistic",
+        "firstTimestampMs": 17500,
+        "lastTimestampMs": 20666.67
+      }
+    },
+    {
+      "id": "seg-08",
+      "startMs": 20833.33,
+      "endMs": 23166.67,
+      "bestHypothesis": "fingerspell/emphatic-letter-sequence-like",
+      "exactLabelGuess": "hello",
+      "actionHypothesis": "fingerspell/emphatic-letter-sequence-like",
+      "eventFamilyHypothesis": "fingerspell/emphatic-letter-sequence-like",
+      "runnerUpFamily": "drink-like",
+      "alternatives": [
+        {
+          "label": "drink-like",
+          "kind": "event-family",
+          "confidence": 0.8018,
+          "reason": "No mouth-adjacent approach or hold support, so drink-like score should decay."
+        },
+        {
+          "label": "impact/bounce-like",
+          "kind": "event-family",
+          "confidence": 0.6167,
+          "reason": "Body bounce and rebound after release favored impact-or-bounce family."
+        },
+        {
+          "label": "inspect/listen-like",
+          "kind": "event-family",
+          "confidence": 0.5708,
+          "reason": "Sustained attention hold near face or ear favored inspect-or-listen family."
+        },
+        {
+          "label": "approval/celebration-like",
+          "kind": "event-family",
+          "confidence": 0.5626,
+          "reason": "Lifted final pose with visible body reaction favored approval-or-celebration family."
+        }
+      ],
+      "confidence": 0.9859,
+      "confidenceMargin": 0.1841,
+      "localTransitionSupport": 0,
+      "debtLabel": "Debt: motion too short",
+      "uncertaintyReason": "I'm not sure. Not enough motion history for reliable known-candidate matching.",
+      "hypothesisReason": "Many discrete compact handshape changes strongly favored fingerspell-or-emphatic-sequence family.",
+      "evidenceChannels": [
+        "handshape",
+        "motion",
+        "timing"
+      ],
+      "motifClusterId": null,
+      "lexemeIds": [
+        "lexeme-03",
+        "lexeme-09"
+      ],
+      "repeatedCycleCount": 0,
+      "confidenceBreakdown": {
+        "motion": 0.22,
+        "handshape": 0.1451,
+        "placement": 0.1668,
+        "pose": 0.2252,
+        "mouthFace": 0.2429
+      },
+      "handshapeChangeStats": {
+        "volatility": 1,
+        "changeCount": 6,
+        "compactBurstScore": 0.9
+      },
+      "bodyReactionStats": {
+        "torsoDisplacement": 0.1652,
+        "shoulderLift": 0.2084,
+        "headBounce": 0.6166,
+        "armSpreadChange": 1,
+        "reactionAftermathScore": 0.306
+      },
+      "phaseFamilyVotes": [],
+      "motifTags": [
+        "repeated-compact-handshape-sequence"
+      ],
+      "qualitySignals": {
+        "handVisibleRatio": 0.7333,
+        "faceVisibleRatio": 1,
+        "poseVisibleRatio": 1,
+        "occlusionRatio": 0.2667,
+        "motionEnergy": 0.0407,
+        "mouthStability": 0.9998,
+        "validFrameRatio": 1
+      },
+      "failureTags": [
+        "hand-visibility-weak",
+        "low-confidence-competition"
+      ],
+      "phases": [
+        {
+          "id": "seg-08-setup-1",
+          "kind": "setup",
+          "role": "setup",
+          "startMs": 20833.33,
+          "endMs": 21416.665,
+          "strokeCount": 0,
+          "confidence": 0.58,
+          "dominantEventFamily": "drink-like",
+          "lexemeId": "lexeme-03",
+          "dominantChannels": [
+            "pose",
+            "placement",
+            "mouthFace"
+          ],
+          "confidenceBreakdown": {
+            "motion": 0.1864,
+            "handshape": 0.123,
+            "placement": 0.2261,
+            "pose": 0.2586,
+            "mouthFace": 0.2058
+          }
+        },
+        {
+          "id": "seg-08-hold-2",
+          "kind": "hold",
+          "role": "hold",
+          "startMs": 22906.67,
+          "endMs": 23166.67,
+          "strokeCount": 0,
+          "confidence": 0.7511,
+          "dominantEventFamily": "drink-like",
+          "lexemeId": "lexeme-09",
+          "dominantChannels": [
+            "mouthFace",
+            "handshape",
+            "placement"
+          ],
+          "confidenceBreakdown": {
+            "motion": 0.1571,
+            "handshape": 0.2179,
+            "placement": 0.2049,
+            "pose": 0.1609,
+            "mouthFace": 0.2592
+          }
+        }
+      ],
+      "refinementChanged": false,
+      "refinedFromFamily": null,
+      "refinementReason": null,
+      "phaseRoleSummary": [
+        "setup",
+        "hold"
+      ],
+      "unresolved": true,
+      "debug": {
+        "framesAnalyzed": 15,
+        "skippedFrames": 0,
+        "detectorFailures": 0,
+        "extractorKind": "holistic",
+        "firstTimestampMs": 20833.33,
+        "lastTimestampMs": 23166.67
+      }
+    }
+  ],
+  "lexemes": [
+    {
+      "id": "lexeme-03",
+      "centroid": [
+        -0.2538,
+        -0.7839,
+        -0.12,
+        -1.1377,
+        -0.2003,
+        -1.0986,
+        -0.1277,
+        -0.8996,
+        0.3246,
+        0.2857,
+        0.3141,
+        0.4144,
+        -0.0801,
+        0.2764,
+        0.096,
+        0.2484,
+        0.0197,
+        0.196,
+        0.8,
+        0,
+        0,
+        0,
+        0.2,
+        0,
+        0.057,
+        0,
+        0.1048,
+        0.1388,
+        0.2112,
+        0.2752,
+        0.2698
+      ],
+      "count": 5,
+      "averageConfidence": 0.6083,
+      "dominantEventFamily": "repeated-tool-use-like",
+      "exampleSegmentIds": [
+        "seg-02",
+        "seg-04",
+        "seg-06",
+        "seg-08"
+      ]
+    },
+    {
+      "id": "lexeme-06",
+      "centroid": [
+        0.2067,
+        -1.5024,
+        -0.0241,
+        -1.6495,
+        0.0102,
+        -1.6039,
+        0.0164,
+        -1.6016,
+        0.3299,
+        0.1174,
+        0.6941,
+        0.5426,
+        -0.7859,
+        -2.4031,
+        0.132,
+        0.2858,
+        0.0063,
+        0.1821,
+        0.25,
+        0.25,
+        0,
+        0,
+        0.5,
+        0,
+        0.0559,
+        0,
+        0.2188,
+        0.1098,
+        0.2155,
+        0.2526,
+        0.2034
+      ],
+      "count": 4,
+      "averageConfidence": 0.7172,
+      "dominantEventFamily": "drink-like",
+      "exampleSegmentIds": [
+        "seg-05"
+      ]
+    },
+    {
+      "id": "lexeme-08",
+      "centroid": [
+        -0.458,
+        -1.4418,
+        -0.3577,
+        -2.0278,
+        -0.3811,
+        -1.8709,
+        -0.4676,
+        -1.6762,
+        0.2929,
+        0.383,
+        0.5821,
+        0.6134,
+        0.1008,
+        -0.0953,
+        0.0591,
+        0.3398,
+        0.0047,
+        0.1949,
+        0.25,
+        0.25,
+        0.25,
+        0.25,
+        0,
+        0,
+        0.0389,
+        0.1875,
+        0.1265,
+        0.1585,
+        0.2313,
+        0.2484,
+        0.2354
+      ],
+      "count": 4,
+      "averageConfidence": 0.6925,
+      "dominantEventFamily": "person/setup-like",
+      "exampleSegmentIds": [
+        "seg-07"
+      ]
+    },
+    {
+      "id": "lexeme-05",
+      "centroid": [
+        -0.5686,
+        -0.8151,
+        -0.5516,
+        -1.3913,
+        -0.481,
+        -1.1929,
+        -0.4512,
+        -1.0172,
+        0.3393,
+        0.4288,
+        0.2961,
+        0.3547,
+        -0.1734,
+        -0.2498,
+        0.0476,
+        0.2763,
+        0.0066,
+        0.1884,
+        0.3333,
+        0,
+        0,
+        0.6667,
+        0,
+        0,
+        0.05,
+        0.1667,
+        0.2434,
+        0.1217,
+        0.1249,
+        0.2864,
+        0.2237
+      ],
+      "count": 3,
+      "averageConfidence": 0.7127,
+      "dominantEventFamily": "object-fall-like",
+      "exampleSegmentIds": [
+        "seg-03",
+        "seg-04"
+      ]
+    },
+    {
+      "id": "lexeme-04",
+      "centroid": [
+        -0.394,
+        -0.7827,
+        -0.3399,
+        -1.3105,
+        -0.2992,
+        -1.1276,
+        -0.267,
+        -0.9746,
+        0.3487,
+        0.3743,
+        0.2812,
+        0.3637,
+        -0.1027,
+        -0.2333,
+        0.1125,
+        0.2396,
+        0.0212,
+        0.1969,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0.1774,
+        0.5,
+        0.3012,
+        0.1951,
+        0.1002,
+        0.1795,
+        0.224
+      ],
+      "count": 2,
+      "averageConfidence": 0.75,
+      "dominantEventFamily": "chop/cut-like",
+      "exampleSegmentIds": [
+        "seg-02",
+        "seg-03"
+      ]
+    },
+    {
+      "id": "lexeme-01",
+      "centroid": [
+        -0.41955851863810634,
+        -0.3660958015103244,
+        -0.20409970519448858,
+        -0.7253741238588854,
+        -0.24842843920669141,
+        -0.6765877210963228,
+        -0.27880684015148155,
+        -0.5177651832587687,
+        0.3765286549727111,
+        0.22920665452034164,
+        0.377334746968496,
+        0.3282269924228217,
+        0.44579207397037707,
+        1.7890962240923067,
+        0.10974648246604939,
+        0.30134284004450723,
+        0.048890547297704694,
+        0.2075543522076442,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0.25,
+        0,
+        0.2555,
+        0.0667,
+        0.1731,
+        0.3095,
+        0.1953
+      ],
+      "count": 1,
+      "averageConfidence": 0.58,
+      "dominantEventFamily": "person/setup-like",
+      "exampleSegmentIds": [
+        "seg-01"
+      ]
+    },
+    {
+      "id": "lexeme-02",
+      "centroid": [
+        -0.41955851863810634,
+        -0.3660958015103244,
+        -0.20409970519448858,
+        -0.7253741238588854,
+        -0.24842843920669141,
+        -0.6765877210963228,
+        -0.27880684015148155,
+        -0.5177651832587687,
+        0.3765286549727111,
+        0.22920665452034164,
+        0.377334746968496,
+        0.3282269924228217,
+        0.44579207397037707,
+        1.7890962240923067,
+        0.10974648246604939,
+        0.30134284004450723,
+        0.048890547297704694,
+        0.2075543522076442,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0.104,
+        0.25,
+        0.3743,
+        0.0587,
+        0.0778,
+        0.3173,
+        0.1719
+      ],
+      "count": 1,
+      "averageConfidence": 0.7473,
+      "dominantEventFamily": "object-fall-like",
+      "exampleSegmentIds": [
+        "seg-01"
+      ]
+    },
+    {
+      "id": "lexeme-07",
+      "centroid": [
+        -0.10529562518693109,
+        -0.46360516668065155,
+        -0.26032280877090824,
+        -0.5817099000415918,
+        -0.2837019689461927,
+        -0.6601592739613125,
+        -0.23864469389747966,
+        -0.4659570291504149,
+        0.28740775683052355,
+        0.20548941882751817,
+        0.2634222551502965,
+        0.318126253820337,
+        0.034760337779339893,
+        0.28042841655687445,
+        0.053415362026451994,
+        0.33484128280870934,
+        0.005971314730901619,
+        0.17650001280770683,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0.015,
+        0.25,
+        0.2502,
+        0.1104,
+        0.0983,
+        0.2803,
+        0.2608
+      ],
+      "count": 1,
+      "averageConfidence": 0.7397,
+      "dominantEventFamily": "object-fall-like",
+      "exampleSegmentIds": [
+        "seg-06"
+      ]
+    },
+    {
+      "id": "lexeme-09",
+      "centroid": [
+        -0.10375337398626043,
+        -1.1108391856498918,
+        -0.2409927613454472,
+        -1.5899440463854069,
+        -0.18035672293282268,
+        -1.4641327103978155,
+        -0.17909161247990554,
+        -1.3397485484574712,
+        0.25599785817307996,
+        0.3070652926235518,
+        0.43543311128438994,
+        0.523062852512486,
+        0.16491451016741981,
+        0.6291133700538235,
+        0.04069218258476423,
+        0.31829196840288004,
+        0.004723187791166178,
+        0.18603585119081542,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0.0112,
+        0,
+        0.1571,
+        0.2179,
+        0.2049,
+        0.1609,
+        0.2592
+      ],
+      "count": 1,
+      "averageConfidence": 0.7511,
+      "dominantEventFamily": "drink-like",
+      "exampleSegmentIds": [
+        "seg-08"
+      ]
+    }
+  ],
+  "summary": {
+    "topSummary": "fingerspell/emphatic-letter-sequence-like x4; chop/cut-like x2",
+    "alternateSummaries": [
+      "fingerspell/emphatic-letter-sequence-like x4",
+      "chop/cut-like x2",
+      "big-fall-like x1"
+    ],
+    "topEventChain": "fingerspell/emphatic-letter-sequence-like -> repeated-tool-use-like -> chop/cut-like -> fingerspell/emphatic-letter-sequence-like x2 -> big-fall-like -> chop/cut-like -> fingerspell/emphatic-letter-sequence-like",
+    "alternateEventChains": [
+      "impact/bounce-like -> repeated-tool-use-like -> chop/cut-like -> impact/bounce-like -> fingerspell/emphatic-letter-sequence-like -> impact/bounce-like -> chop/cut-like -> fingerspell/emphatic-letter-sequence-like",
+      "fingerspell/emphatic-letter-sequence-like -> chop/cut-like x2 -> fingerspell/emphatic-letter-sequence-like x2 -> big-fall-like -> chop/cut-like -> fingerspell/emphatic-letter-sequence-like",
+      "fingerspell/emphatic-letter-sequence-like -> repeated-tool-use-like -> fingerspell/emphatic-letter-sequence-like x3 -> big-fall-like -> chop/cut-like -> fingerspell/emphatic-letter-sequence-like"
+    ],
+    "repeatedPatterns": [
+      {
+        "id": "motif-01",
+        "label": "chop/cut-like",
+        "count": 5,
+        "segmentIds": [
+          "seg-01",
+          "seg-03",
+          "seg-04",
+          "seg-05",
+          "seg-07"
+        ]
+      }
+    ],
+    "topLexemeChain": "lexeme-01 -> lexeme-02 -> lexeme-03 -> lexeme-04 -> lexeme-03 -> lexeme-05 -> lexeme-04 -> lexeme-05 -> lexeme-03 -> lexeme-05 -> lexeme-06 x4 -> lexeme-03 -> lexeme-07 -> lexeme-08 x4 -> lexeme-03 -> lexeme-09",
+    "alternateLexemeChains": [
+      "lexeme-01 -> lexeme-03 -> lexeme-05 -> lexeme-03 -> lexeme-06 -> lexeme-03 -> lexeme-08 -> lexeme-03",
+      "lexeme-04 x2 -> lexeme-08"
+    ],
+    "repeatedActionCycles": 6,
+    "likelyTransitionPoints": [
+      {
+        "segmentId": "seg-01",
+        "timeMs": 2240,
+        "fromPhase": "setup",
+        "toPhase": "release/fall"
+      },
+      {
+        "segmentId": "seg-02",
+        "timeMs": 3830.0015000000003,
+        "fromPhase": "setup",
+        "toPhase": "repeated-action-loop"
+      },
+      {
+        "segmentId": "seg-02",
+        "timeMs": 4740,
+        "fromPhase": "repeated-action-loop",
+        "toPhase": "hold"
+      },
+      {
+        "segmentId": "seg-03",
+        "timeMs": 6880.0015,
+        "fromPhase": "setup",
+        "toPhase": "repeated-action-loop"
+      },
+      {
+        "segmentId": "seg-03",
+        "timeMs": 8240,
+        "fromPhase": "repeated-action-loop",
+        "toPhase": "release/fall"
+      },
+      {
+        "segmentId": "seg-04",
+        "timeMs": 11906.67,
+        "fromPhase": "setup",
+        "toPhase": "release/fall"
+      },
+      {
+        "segmentId": "seg-05",
+        "timeMs": 13208.33,
+        "fromPhase": "setup",
+        "toPhase": "approach"
+      },
+      {
+        "segmentId": "seg-05",
+        "timeMs": 14178.33,
+        "fromPhase": "approach",
+        "toPhase": "hold"
+      },
+      {
+        "segmentId": "seg-05",
+        "timeMs": 15573.33,
+        "fromPhase": "hold",
+        "toPhase": "hold"
+      },
+      {
+        "segmentId": "seg-06",
+        "timeMs": 17073.33,
+        "fromPhase": "setup",
+        "toPhase": "release/fall"
+      },
+      {
+        "segmentId": "seg-07",
+        "timeMs": 18291.6675,
+        "fromPhase": "setup",
+        "toPhase": "approach"
+      },
+      {
+        "segmentId": "seg-07",
+        "timeMs": 19121.6685,
+        "fromPhase": "approach",
+        "toPhase": "repeated-action-loop"
+      }
+    ],
+    "motifTags": [
+      "repeated-compact-handshape-sequence",
+      "repeated-action-loop",
+      "impact-rebound"
+    ],
+    "lexemeCount": 9,
+    "unresolvedSegments": [
+      "seg-01",
+      "seg-02",
+      "seg-03",
+      "seg-04",
+      "seg-05",
+      "seg-06",
+      "seg-07",
+      "seg-08"
+    ],
+    "improveNext": {
+      "strongestFamilies": [
+        {
+          "label": "fingerspell/emphatic-letter-sequence-like",
+          "count": 4,
+          "averageConfidence": 0.9965
+        },
+        {
+          "label": "chop/cut-like",
+          "count": 2,
+          "averageConfidence": 1
+        },
+        {
+          "label": "repeated-tool-use-like",
+          "count": 1,
+          "averageConfidence": 0.9986
+        }
+      ],
+      "weakestFamilies": [
+        {
+          "label": "big-fall-like",
+          "count": 1,
+          "averageConfidence": 0.9907
+        },
+        {
+          "label": "fingerspell/emphatic-letter-sequence-like",
+          "count": 4,
+          "averageConfidence": 0.9965
+        },
+        {
+          "label": "repeated-tool-use-like",
+          "count": 1,
+          "averageConfidence": 0.9986
+        }
+      ],
+      "likelyConfusionPairs": [
+        {
+          "pair": "chop/cut-like vs repeated-tool-use-like",
+          "count": 2
+        },
+        {
+          "pair": "drink-like vs fingerspell/emphatic-letter-sequence-like",
+          "count": 2
+        },
+        {
+          "pair": "fingerspell/emphatic-letter-sequence-like vs impact/bounce-like",
+          "count": 2
+        },
+        {
+          "pair": "big-fall-like vs impact/bounce-like",
+          "count": 1
+        }
+      ],
+      "likelyNextDataNeed": [
+        "Need more repeated examples per recurring visual unit to widen family margins.",
+        "Need more clips with both hands fully visible and less occlusion.",
+        "Need more repeated vertical stroke examples with clean release tails."
+      ],
+      "failureTagCounts": [
+        {
+          "tag": "low-confidence-competition",
+          "count": 8
+        },
+        {
+          "tag": "hand-visibility-weak",
+          "count": 5
+        },
+        {
+          "tag": "tool-use-vs-release-confusion",
+          "count": 3
+        }
+      ]
+    },
+    "metrics": {
+      "genericUnknownRatio": 0,
+      "genericUnknownCount": 0,
+      "resolvedEventFamilyRatio": 1,
+      "repeatedMotifCount": 1,
+      "eventFamilyDiversity": 4,
+      "specificEventFamilyCount": 8,
+      "unresolvedSegmentsCount": 4,
+      "refinementCount": 0,
+      "averageConfidenceMargin": 0.1791875,
+      "averageConfidenceByEventFamily": [
+        {
+          "label": "chop/cut-like",
+          "averageConfidence": 1
+        },
+        {
+          "label": "repeated-tool-use-like",
+          "averageConfidence": 0.9986
+        },
+        {
+          "label": "fingerspell/emphatic-letter-sequence-like",
+          "averageConfidence": 0.9965
+        },
+        {
+          "label": "big-fall-like",
+          "averageConfidence": 0.9907
+        }
+      ]
+    }
+  },
+  "debug": {
+    "detectorInitStatus": "ready",
+    "totalFramesRequested": 140,
+    "framesAnalyzed": 140,
+    "framesSkipped": 0,
+    "duplicateTimestampsSkipped": 0,
+    "invalidTimestampsSkipped": 0,
+    "detectorFailures": 0,
+    "firstTimestampMs": 0,
+    "lastTimestampMs": 23166.67,
+    "warningsCount": 0,
+    "runtimeLogCount": 9,
+    "analysisWarnings": []
+  },
+  "privacy": {
+    "rawVideoStored": false,
+    "pixelDataStored": false,
+    "landmarkOnly": true
+  },
+  "source": "verify"
+}

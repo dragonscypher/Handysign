@@ -12,6 +12,8 @@
 
 # testing
 /coverage
+/playwright-report
+/test-results
 
 # next.js
 /.next/
@@ -19,6 +21,14 @@
 
 # production
 /build
+
+# local SignRepair exports and dev smoke logs
+signrepair-export-*.json
+dev-server.out.txt
+dev-server.err.txt
+sample clip.mp4
+sample 2.mp4
+sample 3.mp4
 
 # misc
 .DS_Store

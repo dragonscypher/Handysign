@@ -1,0 +1,118 @@
+{
+    "clip":  "sample 2.mp4",
+    "beforeTopEventChain":  "impact/bounce-like -\u003e chop/cut-like -\u003e fingerspell/emphatic-letter-sequence-like -\u003e big-fall-like -\u003e repeated-tool-use-like x2 -\u003e fingerspell/emphatic-letter-sequence-like x3 -\u003e approval/celebration-like",
+    "afterTopEventChain":  "impact/bounce-like -\u003e chop/cut-like -\u003e repeated-tool-use-like -\u003e approval/celebration-like -\u003e repeated-tool-use-like x2 -\u003e fingerspell/emphatic-letter-sequence-like -\u003e big-fall-like x2 -\u003e approval/celebration-like",
+    "beforeAverageConfidenceMargin":  0.09539,
+    "afterAverageConfidenceMargin":  0.11110000000000002,
+    "deltaAverageConfidenceMargin":  0.015710000000000016,
+    "beforeFailureTagCounts":  [
+                                   {
+                                       "tag":  "low-confidence-competition",
+                                       "count":  10
+                                   },
+                                   {
+                                       "tag":  "hand-visibility-weak",
+                                       "count":  5
+                                   },
+                                   {
+                                       "tag":  "tool-use-vs-release-confusion",
+                                       "count":  2
+                                   },
+                                   {
+                                       "tag":  "mouth-face-cue-weak",
+                                       "count":  1
+                                   }
+                               ],
+    "afterFailureTagCounts":  [
+                                  {
+                                      "tag":  "low-confidence-competition",
+                                      "count":  10
+                                  },
+                                  {
+                                      "tag":  "hand-visibility-weak",
+                                      "count":  5
+                                  },
+                                  {
+                                      "tag":  "tool-use-vs-release-confusion",
+                                      "count":  4
+                                  },
+                                  {
+                                      "tag":  "mouth-face-cue-weak",
+                                      "count":  1
+                                  }
+                              ],
+    "familyDelta":  [
+                        {
+                            "label":  "approval/celebration-like",
+                            "before":  1,
+                            "after":  2,
+                            "delta":  1
+                        },
+                        {
+                            "label":  "big-fall-like",
+                            "before":  1,
+                            "after":  2,
+                            "delta":  1
+                        },
+                        {
+                            "label":  "chop/cut-like",
+                            "before":  1,
+                            "after":  1,
+                            "delta":  0
+                        },
+                        {
+                            "label":  "fingerspell/emphatic-letter-sequence-like",
+                            "before":  4,
+                            "after":  1,
+                            "delta":  -3
+                        },
+                        {
+                            "label":  "impact/bounce-like",
+                            "before":  1,
+                            "after":  1,
+                            "delta":  0
+                        },
+                        {
+                            "label":  "repeated-tool-use-like",
+                            "before":  2,
+                            "after":  3,
+                            "delta":  1
+                        }
+                    ],
+    "beforeLikelyConfusionPairs":  [
+                                       {
+                                           "pair":  "big-fall-like vs fingerspell/emphatic-letter-sequence-like",
+                                           "count":  2
+                                       },
+                                       {
+                                           "pair":  "approval/celebration-like vs big-fall-like",
+                                           "count":  1
+                                       },
+                                       {
+                                           "pair":  "approval/celebration-like vs fingerspell/emphatic-letter-sequence-like",
+                                           "count":  1
+                                       },
+                                       {
+                                           "pair":  "chop/cut-like vs fingerspell/emphatic-letter-sequence-like",
+                                           "count":  1
+                                       }
+                                   ],
+    "afterLikelyConfusionPairs":  [
+                                      {
+                                          "pair":  "chop/cut-like vs repeated-tool-use-like",
+                                          "count":  3
+                                      },
+                                      {
+                                          "pair":  "approval/celebration-like vs big-fall-like",
+                                          "count":  1
+                                      },
+                                      {
+                                          "pair":  "approval/celebration-like vs drink-like",
+                                          "count":  1
+                                      },
+                                      {
+                                          "pair":  "big-fall-like vs drink-like",
+                                          "count":  1
+                                      }
+                                  ]
+}

@@ -1,0 +1,425 @@
+{
+    "id": "sign-vocab-semantic-confidence@4",
+    "version": 4,
+    "description": "Lightweight local semantic-breadth linear classifier mapping per-segment blind features to common English ASL glosses. Weights are still WLASL/MS-ASL-inspired priors rather than learned ONNX weights, but the head now combines hierarchical family-conditioned softmax with generic motif, phase, and weak-margin priors so uncertain narrative-like segments can choose broader discourse/person/temporal/cognition glosses instead of collapsing only to concrete tool/action words. Round 13 sharpens the softmax calibration for the broader vocab so useful segment confidence recovers without changing the transcript ranking or low-margin warning. Local inference only; no raw video, no remote calls.",
+    "createdAt": "2026-05-28",
+    "featureNames": [
+        "bias",
+        "margin",
+        "lowBlindMargin",
+        "veryLowBlindMargin",
+        "strongBlindMargin",
+        "mouthFaceStrength",
+        "handVisibility",
+        "motionEnergy",
+        "headBounce",
+        "shoulderLift",
+        "torsoDisplacement",
+        "reactionAftermath",
+        "handshapeVolatility",
+        "compactBurst",
+        "phaseSetupRatio",
+        "phaseStrokeRatio",
+        "phaseRecoveryRatio",
+        "phaseReleaseRatio",
+        "phaseHoldRatio",
+        "phaseRepeatedLoopRatio",
+        "motif.repeated-action-loop",
+        "motif.repeated-compact-handshape-sequence",
+        "motif.impact-rebound",
+        "family.chop/cut-like",
+        "family.repeated-tool-use-like",
+        "family.big-fall-like",
+        "family.impact/bounce-like",
+        "family.fingerspell/emphatic-letter-sequence-like",
+        "family.walk/continue-like",
+        "family.approval/celebration-like",
+        "family.discard/throw-away-like",
+        "family.object-fall-like",
+        "family.carry/hold-object-like",
+        "family.person/setup-like",
+        "family.sit/pause-like",
+        "family.drink-like",
+        "family.phone/call-like",
+        "family.inspect/listen-like",
+        "runnerUpFamily.person/setup-like",
+        "runnerUpFamily.sit/pause-like",
+        "runnerUpFamily.fingerspell/emphatic-letter-sequence-like",
+        "runnerUpFamily.carry/hold-object-like",
+        "runnerUpFamily.chop/cut-like",
+        "runnerUpFamily.repeated-tool-use-like"
+    ],
+    "calibration": {
+        "temperature": 0.44,
+        "primaryFamilyBoost": 1.8,
+        "runnerUpFamilyBoost": 0.45,
+        "familyMismatchPenalty": -1.6
+    },
+    "vocab": [
+        {
+            "gloss": "CHOP",
+            "bias": -0.8,
+            "weights": {
+                "family.chop/cut-like": 2.4,
+                "compactBurst": 0.6,
+                "handshapeVolatility": -0.2,
+                "margin": 0.8,
+                "strongBlindMargin": 0.35
+            },
+            "priorConcept": "tool-action"
+        },
+        {
+            "gloss": "HAMMER",
+            "bias": -1.0,
+            "weights": {
+                "family.repeated-tool-use-like": 2.1,
+                "family.chop/cut-like": 0.7,
+                "compactBurst": 0.4,
+                "margin": 0.6,
+                "strongBlindMargin": 0.35
+            },
+            "priorConcept": "tool-action"
+        },
+        {
+            "gloss": "WORK",
+            "bias": -0.6,
+            "weights": {
+                "family.repeated-tool-use-like": 1.4,
+                "motionEnergy": 0.4,
+                "phaseStrokeRatio": 0.3
+            },
+            "priorConcept": "activity"
+        },
+        {
+            "gloss": "FALL",
+            "bias": -0.9,
+            "weights": {
+                "family.big-fall-like": 2.3,
+                "family.object-fall-like": 2.2,
+                "headBounce": 0.6,
+                "torsoDisplacement": 0.5,
+                "reactionAftermath": 0.4,
+                "margin": 0.7,
+                "strongBlindMargin": 0.25
+            },
+            "priorConcept": "event"
+        },
+        {
+            "gloss": "DROP",
+            "bias": -1.0,
+            "weights": {
+                "family.big-fall-like": 1.2,
+                "family.discard/throw-away-like": 1.4,
+                "reactionAftermath": 0.3,
+                "phaseRecoveryRatio": 0.3
+            },
+            "priorConcept": "event"
+        },
+        {
+            "gloss": "BOUNCE",
+            "bias": -1.1,
+            "weights": {
+                "family.impact/bounce-like": 2.4,
+                "headBounce": 0.7,
+                "shoulderLift": 0.4
+            },
+            "priorConcept": "event"
+        },
+        {
+            "gloss": "HIT",
+            "bias": -1.0,
+            "weights": {
+                "family.impact/bounce-like": 1.6,
+                "family.chop/cut-like": 0.4,
+                "compactBurst": 0.3
+            },
+            "priorConcept": "event"
+        },
+        {
+            "gloss": "SPELL",
+            "bias": -1.0,
+            "weights": {
+                "family.fingerspell/emphatic-letter-sequence-like": 2.4,
+                "handshapeVolatility": 0.7,
+                "compactBurst": 0.5
+            },
+            "priorConcept": "discourse"
+        },
+        {
+            "gloss": "NAME",
+            "bias": -1.2,
+            "weights": {
+                "family.fingerspell/emphatic-letter-sequence-like": 1.6,
+                "handshapeVolatility": 0.5
+            },
+            "priorConcept": "discourse"
+        },
+        {
+            "gloss": "WALK",
+            "bias": -1.0,
+            "weights": {
+                "family.walk/continue-like": 2.2,
+                "motionEnergy": 0.3,
+                "torsoDisplacement": 0.4
+            },
+            "priorConcept": "motion"
+        },
+        {
+            "gloss": "GO",
+            "bias": -1.0,
+            "weights": {
+                "family.walk/continue-like": 1.5,
+                "motionEnergy": 0.3
+            },
+            "priorConcept": "motion"
+        },
+        {
+            "gloss": "YES",
+            "bias": -1.1,
+            "weights": {
+                "family.approval/celebration-like": 2.0,
+                "shoulderLift": 0.4
+            },
+            "priorConcept": "response"
+        },
+        {
+            "gloss": "GOOD",
+            "bias": -1.1,
+            "weights": {
+                "family.approval/celebration-like": 1.4,
+                "mouthFaceStrength": 0.3
+            },
+            "priorConcept": "response"
+        },
+        {
+            "gloss": "THROW",
+            "bias": -1.0,
+            "weights": {
+                "family.discard/throw-away-like": 2.2,
+                "shoulderLift": 0.3,
+                "phaseRecoveryRatio": 0.3
+            },
+            "priorConcept": "event"
+        },
+        {
+            "gloss": "HOLD",
+            "bias": -1.0,
+            "weights": {
+                "family.carry/hold-object-like": 2.2,
+                "family.sit/pause-like": 1.1,
+                "motionEnergy": -0.3,
+                "strongBlindMargin": 0.45
+            },
+            "priorConcept": "object-relation"
+        },
+        {
+            "gloss": "CARRY",
+            "bias": -1.1,
+            "weights": {
+                "family.carry/hold-object-like": 1.6,
+                "family.person/setup-like": 0.9,
+                "torsoDisplacement": 0.3
+            },
+            "priorConcept": "object-relation"
+        },
+        {
+            "gloss": "DRINK",
+            "bias": -1.0,
+            "weights": {
+                "family.drink-like": 2.4,
+                "mouthFaceStrength": 0.7
+            },
+            "priorConcept": "consume"
+        },
+        {
+            "gloss": "PHONE",
+            "bias": -1.1,
+            "weights": {
+                "family.phone/call-like": 2.4,
+                "mouthFaceStrength": 0.5
+            },
+            "priorConcept": "communication"
+        },
+        {
+            "gloss": "LISTEN",
+            "bias": -1.1,
+            "weights": {
+                "family.inspect/listen-like": 1.6,
+                "mouthFaceStrength": 0.4
+            },
+            "priorConcept": "perception"
+        },
+        {
+            "gloss": "LOOK",
+            "bias": -1.1,
+            "weights": {
+                "family.inspect/listen-like": 1.6,
+                "mouthFaceStrength": 0.4
+            },
+            "priorConcept": "perception"
+        },
+        {
+            "gloss": "EXPLAIN",
+            "bias": -0.9,
+            "weights": {
+                "family.repeated-tool-use-like": 1.1,
+                "family.chop/cut-like": 1.0,
+                "motif.repeated-action-loop": 0.6,
+                "phaseRepeatedLoopRatio": 0.7,
+                "lowBlindMargin": 0.7,
+                "mouthFaceStrength": 0.25,
+                "compactBurst": 0.15
+            },
+            "priorConcept": "discourse"
+        },
+        {
+            "gloss": "TELL",
+            "bias": -1.0,
+            "weights": {
+                "family.repeated-tool-use-like": 1.15,
+                "family.phone/call-like": 1.2,
+                "family.person/setup-like": 0.9,
+                "runnerUpFamily.person/setup-like": 0.6,
+                "phaseSetupRatio": 0.2,
+                "mouthFaceStrength": 0.35,
+                "lowBlindMargin": 0.7,
+                "veryLowBlindMargin": 0.4,
+                "motionEnergy": 1.4,
+                "torsoDisplacement": 0.8,
+                "handshapeVolatility": 0.5,
+                "compactBurst": 0.3
+            },
+            "priorConcept": "communication"
+        },
+        {
+            "gloss": "ASK",
+            "bias": -0.95,
+            "weights": {
+                "family.chop/cut-like": 1.0,
+                "family.inspect/listen-like": 0.9,
+                "runnerUpFamily.repeated-tool-use-like": 0.3,
+                "motif.impact-rebound": 0.7,
+                "headBounce": 0.7,
+                "lowBlindMargin": 0.7,
+                "mouthFaceStrength": 0.2,
+                "compactBurst": -0.5
+            },
+            "priorConcept": "communication"
+        },
+        {
+            "gloss": "PERSON",
+            "bias": -0.95,
+            "weights": {
+                "family.carry/hold-object-like": 1.4,
+                "family.person/setup-like": 1.0,
+                "runnerUpFamily.person/setup-like": 1.0,
+                "phaseHoldRatio": 0.5,
+                "mouthFaceStrength": 0.25,
+                "headBounce": 0.1,
+                "lowBlindMargin": 0.3
+            },
+            "priorConcept": "person"
+        },
+        {
+            "gloss": "SELF",
+            "bias": -1.05,
+            "weights": {
+                "family.carry/hold-object-like": 1.25,
+                "family.person/setup-like": 1.1,
+                "runnerUpFamily.person/setup-like": 0.7,
+                "runnerUpFamily.sit/pause-like": 0.55,
+                "phaseHoldRatio": 0.4,
+                "phaseRecoveryRatio": 0.3,
+                "mouthFaceStrength": 0.25
+            },
+            "priorConcept": "person"
+        },
+        {
+            "gloss": "FAMILY",
+            "bias": -1.2,
+            "weights": {
+                "family.person/setup-like": 1.3,
+                "family.carry/hold-object-like": 0.7,
+                "runnerUpFamily.person/setup-like": 0.7,
+                "phaseSetupRatio": 0.2,
+                "mouthFaceStrength": 0.25
+            },
+            "priorConcept": "family"
+        },
+        {
+            "gloss": "REMEMBER",
+            "bias": -1.15,
+            "weights": {
+                "family.sit/pause-like": 1.0,
+                "family.inspect/listen-like": 0.6,
+                "runnerUpFamily.sit/pause-like": 0.75,
+                "phaseRecoveryRatio": 0.5,
+                "mouthFaceStrength": 0.3,
+                "lowBlindMargin": 0.2
+            },
+            "priorConcept": "cognition"
+        },
+        {
+            "gloss": "LEARN",
+            "bias": -1.0,
+            "weights": {
+                "family.fingerspell/emphatic-letter-sequence-like": 1.35,
+                "family.chop/cut-like": 0.85,
+                "family.repeated-tool-use-like": 0.75,
+                "runnerUpFamily.fingerspell/emphatic-letter-sequence-like": 1.1,
+                "motif.repeated-compact-handshape-sequence": 0.4,
+                "handshapeVolatility": 0.4,
+                "compactBurst": 0.25,
+                "lowBlindMargin": 0.45,
+                "mouthFaceStrength": 0.2
+            },
+            "priorConcept": "cognition"
+        },
+        {
+            "gloss": "BEFORE",
+            "bias": -1.05,
+            "weights": {
+                "family.object-fall-like": 1.15,
+                "runnerUpFamily.carry/hold-object-like": 0.35,
+                "phaseReleaseRatio": 0.45,
+                "lowBlindMargin": 0.55,
+                "mouthFaceStrength": 0.2
+            },
+            "priorConcept": "temporal"
+        },
+        {
+            "gloss": "NOW",
+            "bias": -1.2,
+            "weights": {
+                "family.carry/hold-object-like": 1.05,
+                "runnerUpFamily.sit/pause-like": 0.85,
+                "phaseHoldRatio": 0.45,
+                "phaseRecoveryRatio": 0.35,
+                "mouthFaceStrength": 0.25,
+                "strongBlindMargin": 0.1
+            },
+            "priorConcept": "temporal"
+        },
+        {
+            "gloss": "CALL",
+            "bias": -1.1,
+            "weights": {
+                "family.phone/call-like": 2.0,
+                "family.repeated-tool-use-like": 0.4,
+                "mouthFaceStrength": 0.6
+            },
+            "priorConcept": "communication"
+        },
+        {
+            "gloss": "DEVICE",
+            "bias": -1.2,
+            "weights": {
+                "family.phone/call-like": 1.3,
+                "family.carry/hold-object-like": 0.7,
+                "family.inspect/listen-like": 0.6,
+                "handVisibility": 0.2
+            },
+            "priorConcept": "device"
+        }
+    ]
+}

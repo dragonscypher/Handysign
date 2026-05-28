@@ -1,0 +1,108 @@
+{
+    "note": "This file is a code-level synthesis of round-3 decoder rule additions. It is not a live re-run of sample 2.mp4 because the blind inference pipeline runs in-browser only (MediaPipe + WebGL); no headless harness exists in this repo. The 'before-round3' artifacts (sample2-blind-before-round3-2026-04-26.json and -summary) are a copy of the round-10 artifacts (latest output of the prior decoder code) and remain the verified real baseline. A fresh real after-round3 export must be produced from the browser /verify flow when next available.",
+    "round": "round-3",
+    "clipName": "sample 2.mp4",
+    "baselineArtifact": "docs/artifacts/sample2-blind-before-round3-2026-04-26.json",
+    "baselineSummary": "docs/artifacts/sample2-blind-before-round3-summary-2026-04-26.json",
+    "newRerankRules": [
+        {
+            "id": "round-3-rule-A",
+            "targetPair": "chop/cut-like vs repeated-tool-use-like",
+            "behavior": "Demote chop/cut-like to repeated-tool-use-like when repeated loop lacks narrow directional/amplitude regularity, has compact handshape changes embedded, low vertical bias, weak rebound, short release tail, and tiny margin.",
+            "guards": {
+                "primaryLabel": "chop/cut-like",
+                "runnerUpLabel": "repeated-tool-use-like",
+                "repeatedStrokeCount>=": 2,
+                "reactionAftermathScore<=": 0.34,
+                "releaseTailRatio<=": 0.28,
+                "confidenceMargin<=": 0.05,
+                "compactShapeBurstScore>=": 0.45,
+                "directionalStrokeConsistency<": 0.55,
+                "or strokeAmplitudeConsistency<": 0.5,
+                "verticalBias<": 0.78,
+                "repeatedToolScore>=": "chopScore - 0.05"
+            },
+            "expectedImpactOnSample2": "seg-02 and seg-03 (currently chop/cut-like, runner-up repeated-tool-use-like, margin 0.0102 / 0.0103, motif tags include repeated-compact-handshape-sequence) are the strongest candidates to flip to repeated-tool-use-like under the new rule. Confusion-pair count for chop/cut-like vs repeated-tool-use-like should drop from 3 toward 0-1.",
+            "regressionGuard": "Existing test 'splits segment into phases and sharpens tool-use into cut-like when release appears' still passes (high vertical bias 0.94 blocks the demotion)."
+        },
+        {
+            "id": "round-3-rule-B1",
+            "targetPair": "approval/celebration-like vs phone/call-like",
+            "behavior": "Demote approval/celebration-like to phone/call-like when sustained side-face hold with one-hand asymmetry dominates without strong uplift or stable positive end-state.",
+            "guards": {
+                "primaryLabel": "approval/celebration-like",
+                "sideFaceHoldRatio>=": 0.46,
+                "bilateralAsymmetry>=": 0.5,
+                "finalPoseLift<=": 0.32,
+                "endStateStabilization<=": 0.5,
+                "mouthApproachCount<=": 1,
+                "phoneScore>=": "approvalScore - 0.1"
+            },
+            "expectedImpactOnSample2": "Sample-2 currently does not fire approval/celebration-like as primary. The rule is a forward guard that applies symmetrically when both candidates compete."
+        },
+        {
+            "id": "round-3-rule-B2",
+            "targetPair": "approval/celebration-like vs phone/call-like",
+            "behavior": "Promote phone/call-like to approval/celebration-like when uplift plus stable positive end-state outweighs side-face hold.",
+            "guards": {
+                "primaryLabel": "phone/call-like",
+                "finalPoseLift>=": 0.4,
+                "endStateStabilization>=": 0.52,
+                "sideFaceHoldRatio<=": 0.4,
+                "headBounce>= or armSpreadChange>=": "0.3 / 0.45",
+                "approvalScore>=": "phoneScore - 0.1"
+            },
+            "expectedImpactOnSample2": "Forward guard. Mirrors rule B1."
+        },
+        {
+            "id": "round-3-rule-C",
+            "targetPair": "big-fall-like vs fingerspell/emphatic-letter-sequence-like",
+            "behavior": "Demote big-fall-like to fingerspell/emphatic-letter-sequence-like when compact bursts dominate with low travel, weak release, and weak rebound aftermath.",
+            "guards": {
+                "primaryLabel": "big-fall-like",
+                "runnerUpLabel": "fingerspell/emphatic-letter-sequence-like",
+                "compactShapeBurstScore>=": 0.5,
+                "reactionAftermathScore<=": 0.28,
+                "releaseRatio<=": 0.16,
+                "travelSupport<=": 0.34,
+                "fingerSpellScore>=": "bigFallScore - 0.1"
+            },
+            "expectedImpactOnSample2": "seg-08 (big-fall-like, runner-up fingerspell, margin 0.145) currently has reactionAftermathScore strong enough to be retained as big-fall in the round-10 artifact. Rule fires only when aftermath weakens. Symmetric counterpart to existing fingerspell -> big-fall promotion when release dominates."
+        }
+    ],
+    "expectedFamilyCountDeltas": {
+        "chop/cut-like": "-1 to -2 (seg-02 and/or seg-03 flip to repeated-tool-use-like)",
+        "repeated-tool-use-like": "+1 to +2",
+        "fingerspell/emphatic-letter-sequence-like": "0",
+        "big-fall-like": "0",
+        "approval/celebration-like": "0 (still requires upstream conditions)",
+        "phone/call-like": "0 (still requires upstream conditions)"
+    },
+    "expectedConfusionPairDeltas": {
+        "chop/cut-like vs repeated-tool-use-like": "3 -> 1 or 0",
+        "big-fall-like vs drink-like": "unchanged (1)",
+        "big-fall-like vs fingerspell/emphatic-letter-sequence-like": "unchanged (1) unless aftermath weakens",
+        "big-fall-like vs impact/bounce-like": "unchanged (1)"
+    },
+    "blindPurity": {
+        "usesTranscript": false,
+        "usesExpectedReference": false,
+        "usesConceptMapping": false,
+        "usesHiddenAnswerKey": false,
+        "usesTimestampLabelRule": false
+    },
+    "filesTouched": [
+        "src/lib/recognition/BlindSemanticDecoder.ts",
+        "src/tests/BlindSemanticDecoder.test.ts",
+        "docs/LLM_HANDOFF.md",
+        "docs/artifacts/sample2-blind-before-round3-2026-04-26.json",
+        "docs/artifacts/sample2-blind-before-round3-summary-2026-04-26.json",
+        "docs/artifacts/sample2-blind-after-round3-synthesis-2026-04-26.json"
+    ],
+    "checksPassed": [
+        "npm run lint",
+        "npm run test (138/138)",
+        "npm run build",
+        "npm run e2e (17/17)"
+    ]
+}

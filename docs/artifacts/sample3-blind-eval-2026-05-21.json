@@ -1,0 +1,444 @@
+{
+  "id": "sample3-blind-eval-2026-05-21",
+  "generatedAt": "2026-05-21T17:21:42.374Z",
+  "sourceExport": "docs/artifacts/sample3-blind-2026-05-21.json",
+  "sourceLexicon": "docs/artifacts/sample2-adaptation-pack-2026-05-18.json",
+  "clip": {
+    "name": "sample 3.mp4",
+    "durationMs": 141200,
+    "segmentCount": 10,
+    "mode": "blind-inference",
+    "familyMix": [
+      {
+        "family": "repeated-tool-use-like",
+        "count": 3
+      },
+      {
+        "family": "chop/cut-like",
+        "count": 3
+      },
+      {
+        "family": "object-fall-like",
+        "count": 2
+      },
+      {
+        "family": "carry/hold-object-like",
+        "count": 2
+      }
+    ],
+    "meanBlindConfidenceMargin": 0.0684
+  },
+  "usedTranscriptLeakageCheck": {
+    "usedExpectedReference": false,
+    "usedAnswerKey": false,
+    "usedHumanTranscript": false,
+    "note": "Sample-3 has no labeled transcript in this repo. Validation is structural only."
+  },
+  "pretrained": {
+    "transcript": "FALL EXPLAIN HOLD PERSON FALL LEARN ASK EXPLAIN EXPLAIN TELL",
+    "confidence": 0.46192150979539415,
+    "confidencePercent": 46,
+    "isLowConfidence": true,
+    "lowConfidenceReason": "Local head still has a compact 32-word vocabulary and 8/10 blind-family margins are below 0.10 (lowest 0.000).",
+    "source": "pretrained",
+    "modelId": "sign-vocab-semantic-breadth@3",
+    "segments": [
+      {
+        "id": "seg-01",
+        "startMs": 0,
+        "endMs": 1333.33,
+        "family": "object-fall-like",
+        "runnerUpFamily": "carry/hold-object-like",
+        "blindConfidenceMargin": 0.0758,
+        "text": "FALL",
+        "priorConcept": "event",
+        "confidence": 0.684746750026018,
+        "runnerUpGloss": "BEFORE",
+        "runnerUpPriorConcept": "temporal",
+        "runnerUpProbability": 0.27436137402701055
+      },
+      {
+        "id": "seg-02",
+        "startMs": 1500,
+        "endMs": 4166.67,
+        "family": "repeated-tool-use-like",
+        "runnerUpFamily": "chop/cut-like",
+        "blindConfidenceMargin": 0,
+        "text": "EXPLAIN",
+        "priorConcept": "discourse",
+        "confidence": 0.4160503767871353,
+        "runnerUpGloss": "TELL",
+        "runnerUpPriorConcept": "communication",
+        "runnerUpProbability": 0.31077939255038145
+      },
+      {
+        "id": "seg-03",
+        "startMs": 4333.33,
+        "endMs": 6166.67,
+        "family": "carry/hold-object-like",
+        "runnerUpFamily": "sit/pause-like",
+        "blindConfidenceMargin": 0.2827,
+        "text": "HOLD",
+        "priorConcept": "object-relation",
+        "confidence": 0.5360842528823055,
+        "runnerUpGloss": "NOW",
+        "runnerUpPriorConcept": "temporal",
+        "runnerUpProbability": 0.1527190807876846
+      },
+      {
+        "id": "seg-04",
+        "startMs": 6333.33,
+        "endMs": 9166.67,
+        "family": "carry/hold-object-like",
+        "runnerUpFamily": "person/setup-like",
+        "blindConfidenceMargin": 0.1282,
+        "text": "PERSON",
+        "priorConcept": "person",
+        "confidence": 0.4990608460748818,
+        "runnerUpGloss": "SELF",
+        "runnerUpPriorConcept": "person",
+        "runnerUpProbability": 0.20687105395229305
+      },
+      {
+        "id": "seg-05",
+        "startMs": 9333.33,
+        "endMs": 10500,
+        "family": "object-fall-like",
+        "runnerUpFamily": "carry/hold-object-like",
+        "blindConfidenceMargin": 0.0587,
+        "text": "FALL",
+        "priorConcept": "event",
+        "confidence": 0.6546016760922818,
+        "runnerUpGloss": "BEFORE",
+        "runnerUpPriorConcept": "temporal",
+        "runnerUpProbability": 0.30537533556193647
+      },
+      {
+        "id": "seg-06",
+        "startMs": 10666.67,
+        "endMs": 13333.33,
+        "family": "chop/cut-like",
+        "runnerUpFamily": "fingerspell/emphatic-letter-sequence-like",
+        "blindConfidenceMargin": 0.0661,
+        "text": "LEARN",
+        "priorConcept": "cognition",
+        "confidence": 0.5874670032356956,
+        "runnerUpGloss": "CHOP",
+        "runnerUpPriorConcept": "tool-action",
+        "runnerUpProbability": 0.2539683836921691
+      },
+      {
+        "id": "seg-07",
+        "startMs": 13500,
+        "endMs": 15833.33,
+        "family": "chop/cut-like",
+        "runnerUpFamily": "repeated-tool-use-like",
+        "blindConfidenceMargin": 0.0096,
+        "text": "ASK",
+        "priorConcept": "communication",
+        "confidence": 0.42553980355378107,
+        "runnerUpGloss": "EXPLAIN",
+        "runnerUpPriorConcept": "discourse",
+        "runnerUpProbability": 0.3510735493798227
+      },
+      {
+        "id": "seg-08",
+        "startMs": 16000,
+        "endMs": 18666.67,
+        "family": "chop/cut-like",
+        "runnerUpFamily": "repeated-tool-use-like",
+        "blindConfidenceMargin": 0.0079,
+        "text": "EXPLAIN",
+        "priorConcept": "discourse",
+        "confidence": 0.35647898409470513,
+        "runnerUpGloss": "ASK",
+        "runnerUpPriorConcept": "communication",
+        "runnerUpProbability": 0.2772147410612461
+      },
+      {
+        "id": "seg-09",
+        "startMs": 18833.33,
+        "endMs": 21000,
+        "family": "repeated-tool-use-like",
+        "runnerUpFamily": "chop/cut-like",
+        "blindConfidenceMargin": 0.0352,
+        "text": "EXPLAIN",
+        "priorConcept": "discourse",
+        "confidence": 0.39588610976240973,
+        "runnerUpGloss": "TELL",
+        "runnerUpPriorConcept": "communication",
+        "runnerUpProbability": 0.24235142039078267
+      },
+      {
+        "id": "seg-10",
+        "startMs": 21166.67,
+        "endMs": 23166.67,
+        "family": "repeated-tool-use-like",
+        "runnerUpFamily": "big-fall-like",
+        "blindConfidenceMargin": 0.02,
+        "text": "TELL",
+        "priorConcept": "communication",
+        "confidence": 0.515195834161967,
+        "runnerUpGloss": "EXPLAIN",
+        "runnerUpPriorConcept": "discourse",
+        "runnerUpProbability": 0.2244333882642241
+      }
+    ],
+    "tightBlindMarginCount": 8,
+    "lowestBlindMargin": 0
+  },
+  "adapted": {
+    "transcript": "FALL HAMMER HOLD PERSON FALL CHOP CHOP CHOP HAMMER HAMMER",
+    "confidence": 0.4919215097953942,
+    "confidencePercent": 49,
+    "isLowConfidence": true,
+    "lowConfidenceReason": "6 custom-sign override(s) applied; Local head still has a compact 32-word vocabulary and 8/10 blind-family margins are below 0.10 (lowest 0.000).",
+    "source": "adapted",
+    "modelId": "adapted-over-sign-vocab-semantic-breadth@3",
+    "segments": [
+      {
+        "id": "seg-01",
+        "startMs": 0,
+        "endMs": 1333.33,
+        "family": "object-fall-like",
+        "runnerUpFamily": "carry/hold-object-like",
+        "blindConfidenceMargin": 0.0758,
+        "text": "FALL",
+        "priorConcept": "event",
+        "confidence": 0.684746750026018,
+        "runnerUpGloss": "BEFORE",
+        "runnerUpPriorConcept": "temporal",
+        "runnerUpProbability": 0.27436137402701055
+      },
+      {
+        "id": "seg-02",
+        "startMs": 1500,
+        "endMs": 4166.67,
+        "family": "repeated-tool-use-like",
+        "runnerUpFamily": "chop/cut-like",
+        "blindConfidenceMargin": 0,
+        "text": "HAMMER",
+        "priorConcept": "tool-action",
+        "confidence": 0.4660503767871353,
+        "runnerUpGloss": "TELL",
+        "runnerUpPriorConcept": "communication",
+        "runnerUpProbability": 0.31077939255038145,
+        "customSignId": "custom-sign-hammer-0002",
+        "customSignSplit": "calibration"
+      },
+      {
+        "id": "seg-03",
+        "startMs": 4333.33,
+        "endMs": 6166.67,
+        "family": "carry/hold-object-like",
+        "runnerUpFamily": "sit/pause-like",
+        "blindConfidenceMargin": 0.2827,
+        "text": "HOLD",
+        "priorConcept": "object-relation",
+        "confidence": 0.5360842528823055,
+        "runnerUpGloss": "NOW",
+        "runnerUpPriorConcept": "temporal",
+        "runnerUpProbability": 0.1527190807876846
+      },
+      {
+        "id": "seg-04",
+        "startMs": 6333.33,
+        "endMs": 9166.67,
+        "family": "carry/hold-object-like",
+        "runnerUpFamily": "person/setup-like",
+        "blindConfidenceMargin": 0.1282,
+        "text": "PERSON",
+        "priorConcept": "person",
+        "confidence": 0.4990608460748818,
+        "runnerUpGloss": "SELF",
+        "runnerUpPriorConcept": "person",
+        "runnerUpProbability": 0.20687105395229305
+      },
+      {
+        "id": "seg-05",
+        "startMs": 9333.33,
+        "endMs": 10500,
+        "family": "object-fall-like",
+        "runnerUpFamily": "carry/hold-object-like",
+        "blindConfidenceMargin": 0.0587,
+        "text": "FALL",
+        "priorConcept": "event",
+        "confidence": 0.6546016760922818,
+        "runnerUpGloss": "BEFORE",
+        "runnerUpPriorConcept": "temporal",
+        "runnerUpProbability": 0.30537533556193647
+      },
+      {
+        "id": "seg-06",
+        "startMs": 10666.67,
+        "endMs": 13333.33,
+        "family": "chop/cut-like",
+        "runnerUpFamily": "fingerspell/emphatic-letter-sequence-like",
+        "blindConfidenceMargin": 0.0661,
+        "text": "CHOP",
+        "priorConcept": "tool-action",
+        "confidence": 0.6374670032356956,
+        "runnerUpGloss": "CHOP",
+        "runnerUpPriorConcept": "tool-action",
+        "runnerUpProbability": 0.2539683836921691,
+        "customSignId": "custom-sign-chop-0001",
+        "customSignSplit": "calibration"
+      },
+      {
+        "id": "seg-07",
+        "startMs": 13500,
+        "endMs": 15833.33,
+        "family": "chop/cut-like",
+        "runnerUpFamily": "repeated-tool-use-like",
+        "blindConfidenceMargin": 0.0096,
+        "text": "CHOP",
+        "priorConcept": "tool-action",
+        "confidence": 0.47553980355378106,
+        "runnerUpGloss": "EXPLAIN",
+        "runnerUpPriorConcept": "discourse",
+        "runnerUpProbability": 0.3510735493798227,
+        "customSignId": "custom-sign-chop-0001",
+        "customSignSplit": "calibration"
+      },
+      {
+        "id": "seg-08",
+        "startMs": 16000,
+        "endMs": 18666.67,
+        "family": "chop/cut-like",
+        "runnerUpFamily": "repeated-tool-use-like",
+        "blindConfidenceMargin": 0.0079,
+        "text": "CHOP",
+        "priorConcept": "tool-action",
+        "confidence": 0.4064789840947051,
+        "runnerUpGloss": "ASK",
+        "runnerUpPriorConcept": "communication",
+        "runnerUpProbability": 0.2772147410612461,
+        "customSignId": "custom-sign-chop-0001",
+        "customSignSplit": "calibration"
+      },
+      {
+        "id": "seg-09",
+        "startMs": 18833.33,
+        "endMs": 21000,
+        "family": "repeated-tool-use-like",
+        "runnerUpFamily": "chop/cut-like",
+        "blindConfidenceMargin": 0.0352,
+        "text": "HAMMER",
+        "priorConcept": "tool-action",
+        "confidence": 0.4458861097624097,
+        "runnerUpGloss": "TELL",
+        "runnerUpPriorConcept": "communication",
+        "runnerUpProbability": 0.24235142039078267,
+        "customSignId": "custom-sign-hammer-0002",
+        "customSignSplit": "calibration"
+      },
+      {
+        "id": "seg-10",
+        "startMs": 21166.67,
+        "endMs": 23166.67,
+        "family": "repeated-tool-use-like",
+        "runnerUpFamily": "big-fall-like",
+        "blindConfidenceMargin": 0.02,
+        "text": "HAMMER",
+        "priorConcept": "tool-action",
+        "confidence": 0.5651958341619671,
+        "runnerUpGloss": "EXPLAIN",
+        "runnerUpPriorConcept": "discourse",
+        "runnerUpProbability": 0.2244333882642241,
+        "customSignId": "custom-sign-hammer-0002",
+        "customSignSplit": "calibration"
+      }
+    ],
+    "adapterApplied": true,
+    "appliedCount": 6,
+    "baseTranscript": "FALL EXPLAIN HOLD PERSON FALL LEARN ASK EXPLAIN EXPLAIN TELL"
+  },
+  "diagnostics": {
+    "segmentsBelow55": 7,
+    "segmentsBelow25": 0,
+    "sample2FamiliesPresentInSample3": [
+      "repeated-tool-use-like",
+      "chop/cut-like"
+    ],
+    "adapterAppliedCount": 6,
+    "adapterConfidenceDelta": 0.03,
+    "tightBlindMarginCount": 8,
+    "semanticBreadth": {
+      "uniqueGlossCount": 7,
+      "uniqueSemanticClassCount": 6,
+      "coarseActionToolObjectShare": 0.3,
+      "broaderSemanticShare": 0.7,
+      "maxRepeatedGlossCount": 3,
+      "maxConsecutiveGlossRun": 2,
+      "maxRepeatedSemanticClassCount": 3,
+      "glossCounts": [
+        {
+          "label": "EXPLAIN",
+          "count": 3
+        },
+        {
+          "label": "FALL",
+          "count": 2
+        },
+        {
+          "label": "HOLD",
+          "count": 1
+        },
+        {
+          "label": "PERSON",
+          "count": 1
+        },
+        {
+          "label": "LEARN",
+          "count": 1
+        },
+        {
+          "label": "ASK",
+          "count": 1
+        },
+        {
+          "label": "TELL",
+          "count": 1
+        }
+      ],
+      "semanticClassMix": [
+        {
+          "label": "discourse",
+          "count": 3
+        },
+        {
+          "label": "event",
+          "count": 2
+        },
+        {
+          "label": "communication",
+          "count": 2
+        },
+        {
+          "label": "object-relation",
+          "count": 1
+        },
+        {
+          "label": "person",
+          "count": 1
+        },
+        {
+          "label": "cognition",
+          "count": 1
+        }
+      ],
+      "collapseRisk": false,
+      "collapseRiskReason": "Top transcript includes enough non-coarse semantic classes to avoid the previous action/tool/object collapse signal."
+    }
+  },
+  "readiness": {
+    "normalModeProducesTranscript": true,
+    "normalModeShowsConfidence": true,
+    "normalModeShowsAlternatives": true,
+    "lowConfidenceHonestlyFlagged": true,
+    "adapterRespectsFamilyHints": true,
+    "readyForAnotherUnseenUserUpload": false,
+    "readyForAnotherUnseenUserUploadReason": "Semantic-breadth local head reduces the coarse action/tool/object collapse, but sample-3 blind-family margins remain weak. Wait for a learned ONNX/WLASL head before requesting another unseen user clip."
+  },
+  "notes": "Structural validation only. No transcript was read, requested, or compared. Sample-3 is the active unseen validation clip for the translation product."
+}

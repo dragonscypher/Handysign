@@ -1,0 +1,318 @@
+{
+  "segmentCount": 10,
+  "topEventChain": "impact/bounce-like -> chop/cut-like -> repeated-tool-use-like -> approval/celebration-like -> repeated-tool-use-like x2 -> fingerspell/emphatic-letter-sequence-like -> big-fall-like x2 -> approval/celebration-like",
+  "topLexemeChain": "lexeme-01 x2 -> lexeme-02 -> lexeme-03 -> lexeme-04 -> lexeme-02 -> lexeme-03 -> lexeme-04 -> lexeme-05 x3 -> lexeme-02 -> lexeme-03 -> lexeme-06 -> lexeme-07 -> lexeme-08 x2 -> lexeme-02 -> lexeme-04 -> lexeme-09 x2 -> lexeme-10 x2 -> lexeme-11 x4",
+  "familyCounts": [
+    [
+      "repeated-tool-use-like",
+      3
+    ],
+    [
+      "approval/celebration-like",
+      2
+    ],
+    [
+      "big-fall-like",
+      2
+    ],
+    [
+      "impact/bounce-like",
+      1
+    ],
+    [
+      "chop/cut-like",
+      1
+    ],
+    [
+      "fingerspell/emphatic-letter-sequence-like",
+      1
+    ]
+  ],
+  "firedNewFamilies": [
+    "impact/bounce-like",
+    "approval/celebration-like",
+    "fingerspell/emphatic-letter-sequence-like",
+    "big-fall-like"
+  ],
+  "metrics": {
+    "genericUnknownRatio": 0,
+    "genericUnknownCount": 0,
+    "resolvedEventFamilyRatio": 1,
+    "repeatedMotifCount": 1,
+    "eventFamilyDiversity": 6,
+    "specificEventFamilyCount": 10,
+    "unresolvedSegmentsCount": 8,
+    "refinementCount": 0,
+    "averageConfidenceMargin": 0.11110000000000002,
+    "averageConfidenceByEventFamily": [
+      {
+        "label": "chop/cut-like",
+        "averageConfidence": 1
+      },
+      {
+        "label": "repeated-tool-use-like",
+        "averageConfidence": 1
+      },
+      {
+        "label": "approval/celebration-like",
+        "averageConfidence": 0.9937
+      },
+      {
+        "label": "fingerspell/emphatic-letter-sequence-like",
+        "averageConfidence": 0.9866
+      },
+      {
+        "label": "big-fall-like",
+        "averageConfidence": 0.9537
+      },
+      {
+        "label": "impact/bounce-like",
+        "averageConfidence": 0.5383
+      }
+    ]
+  },
+  "failureTagCounts": [
+    {
+      "tag": "low-confidence-competition",
+      "count": 10
+    },
+    {
+      "tag": "hand-visibility-weak",
+      "count": 5
+    },
+    {
+      "tag": "tool-use-vs-release-confusion",
+      "count": 4
+    },
+    {
+      "tag": "mouth-face-cue-weak",
+      "count": 1
+    }
+  ],
+  "likelyConfusionPairs": [
+    {
+      "pair": "chop/cut-like vs repeated-tool-use-like",
+      "count": 3
+    },
+    {
+      "pair": "approval/celebration-like vs big-fall-like",
+      "count": 1
+    },
+    {
+      "pair": "approval/celebration-like vs drink-like",
+      "count": 1
+    },
+    {
+      "pair": "big-fall-like vs drink-like",
+      "count": 1
+    }
+  ],
+  "segments": [
+    {
+      "id": "seg-01",
+      "family": "impact/bounce-like",
+      "runnerUp": "walk/continue-like",
+      "margin": 0.0584,
+      "phaseVotes": [],
+      "failureTags": [
+        "low-confidence-competition"
+      ],
+      "motifTags": [],
+      "refinementChanged": false,
+      "reason": "Body bounce and rebound after release favored impact-or-bounce family."
+    },
+    {
+      "id": "seg-02",
+      "family": "chop/cut-like",
+      "runnerUp": "repeated-tool-use-like",
+      "margin": 0.0102,
+      "phaseVotes": [
+        {
+          "label": "repeated-tool-use-like",
+          "score": 0.26
+        },
+        {
+          "label": "chop/cut-like",
+          "score": 0.24
+        }
+      ],
+      "failureTags": [
+        "tool-use-vs-release-confusion",
+        "low-confidence-competition"
+      ],
+      "motifTags": [
+        "repeated-action-loop",
+        "repeated-compact-handshape-sequence"
+      ],
+      "refinementChanged": false,
+      "reason": "Repeated action-loop phases supported sharper cut-like family."
+    },
+    {
+      "id": "seg-03",
+      "family": "repeated-tool-use-like",
+      "runnerUp": "chop/cut-like",
+      "margin": 0.0213,
+      "phaseVotes": [
+        {
+          "label": "repeated-tool-use-like",
+          "score": 0.26
+        },
+        {
+          "label": "chop/cut-like",
+          "score": 0.24
+        }
+      ],
+      "failureTags": [
+        "tool-use-vs-release-confusion",
+        "low-confidence-competition"
+      ],
+      "motifTags": [
+        "repeated-action-loop",
+        "repeated-compact-handshape-sequence",
+        "impact-rebound"
+      ],
+      "refinementChanged": false,
+      "reason": "Neighboring tool-like context agreed with repeated action loop."
+    },
+    {
+      "id": "seg-04",
+      "family": "approval/celebration-like",
+      "runnerUp": "big-fall-like",
+      "margin": 0.0544,
+      "phaseVotes": [
+        {
+          "label": "approval/celebration-like",
+          "score": 0.28
+        }
+      ],
+      "failureTags": [
+        "hand-visibility-weak",
+        "mouth-face-cue-weak",
+        "low-confidence-competition"
+      ],
+      "motifTags": [
+        "repeated-compact-handshape-sequence",
+        "impact-rebound"
+      ],
+      "refinementChanged": false,
+      "reason": "Strong uplift and rebound kept approval-like reading ahead of compact-sequence fallback."
+    },
+    {
+      "id": "seg-05",
+      "family": "repeated-tool-use-like",
+      "runnerUp": "impact/bounce-like",
+      "margin": 0.2801,
+      "phaseVotes": [],
+      "failureTags": [
+        "tool-use-vs-release-confusion",
+        "low-confidence-competition"
+      ],
+      "motifTags": [
+        "repeated-action-loop",
+        "repeated-compact-handshape-sequence",
+        "impact-rebound"
+      ],
+      "refinementChanged": false,
+      "reason": "Neighboring tool-like context agreed with repeated action loop."
+    },
+    {
+      "id": "seg-06",
+      "family": "repeated-tool-use-like",
+      "runnerUp": "chop/cut-like",
+      "margin": 0.1084,
+      "phaseVotes": [
+        {
+          "label": "repeated-tool-use-like",
+          "score": 0.26
+        },
+        {
+          "label": "chop/cut-like",
+          "score": 0.24
+        }
+      ],
+      "failureTags": [
+        "tool-use-vs-release-confusion",
+        "low-confidence-competition"
+      ],
+      "motifTags": [
+        "repeated-action-loop"
+      ],
+      "refinementChanged": false,
+      "reason": "Neighboring tool-like context agreed with repeated action loop."
+    },
+    {
+      "id": "seg-07",
+      "family": "fingerspell/emphatic-letter-sequence-like",
+      "runnerUp": "impact/bounce-like",
+      "margin": 0.3057,
+      "phaseVotes": [],
+      "failureTags": [
+        "hand-visibility-weak",
+        "low-confidence-competition"
+      ],
+      "motifTags": [
+        "repeated-compact-handshape-sequence"
+      ],
+      "refinementChanged": false,
+      "reason": "Many discrete compact handshape changes strongly favored fingerspell-or-emphatic-sequence family."
+    },
+    {
+      "id": "seg-08",
+      "family": "big-fall-like",
+      "runnerUp": "fingerspell/emphatic-letter-sequence-like",
+      "margin": 0.0783,
+      "phaseVotes": [],
+      "failureTags": [
+        "hand-visibility-weak",
+        "low-confidence-competition"
+      ],
+      "motifTags": [
+        "repeated-compact-handshape-sequence"
+      ],
+      "refinementChanged": false,
+      "reason": "Release plus aftermath stayed strong enough to sharpen broad cut-or-drop reading into big-fall family."
+    },
+    {
+      "id": "seg-09",
+      "family": "big-fall-like",
+      "runnerUp": "drink-like",
+      "margin": 0.0983,
+      "phaseVotes": [],
+      "failureTags": [
+        "hand-visibility-weak",
+        "low-confidence-competition"
+      ],
+      "motifTags": [
+        "repeated-compact-handshape-sequence"
+      ],
+      "refinementChanged": false,
+      "reason": "Release plus aftermath stayed strong enough to sharpen broad cut-or-drop reading into big-fall family."
+    },
+    {
+      "id": "seg-10",
+      "family": "approval/celebration-like",
+      "runnerUp": "drink-like",
+      "margin": 0.0959,
+      "phaseVotes": [
+        {
+          "label": "fingerspell/emphatic-letter-sequence-like",
+          "score": 0.32
+        },
+        {
+          "label": "approval/celebration-like",
+          "score": 0.28
+        }
+      ],
+      "failureTags": [
+        "hand-visibility-weak",
+        "low-confidence-competition"
+      ],
+      "motifTags": [
+        "repeated-compact-handshape-sequence",
+        "impact-rebound"
+      ],
+      "refinementChanged": false,
+      "reason": "Strong uplift and rebound kept approval-like reading ahead of compact-sequence fallback."
+    }
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "clipName": "sample clip.mp4",
+  "segmentCount": 8,
+  "topEventChain": "fingerspell/emphatic-letter-sequence-like -> repeated-tool-use-like -> chop/cut-like -> fingerspell/emphatic-letter-sequence-like x2 -> big-fall-like -> chop/cut-like -> fingerspell/emphatic-letter-sequence-like",
+  "topLexemeChain": "lexeme-01 -> lexeme-02 -> lexeme-03 -> lexeme-04 -> lexeme-03 -> lexeme-05 -> lexeme-04 -> lexeme-05 -> lexeme-03 -> lexeme-05 -> lexeme-06 x4 -> lexeme-03 -> lexeme-07 -> lexeme-08 x4 -> lexeme-03 -> lexeme-09",
+  "familyCounts": [
+    [
+      "fingerspell/emphatic-letter-sequence-like",
+      4
+    ],
+    [
+      "chop/cut-like",
+      2
+    ],
+    [
+      "repeated-tool-use-like",
+      1
+    ],
+    [
+      "big-fall-like",
+      1
+    ]
+  ],
+  "failureTagCounts": [
+    {
+      "tag": "low-confidence-competition",
+      "count": 8
+    },
+    {
+      "tag": "hand-visibility-weak",
+      "count": 5
+    },
+    {
+      "tag": "tool-use-vs-release-confusion",
+      "count": 3
+    }
+  ],
+  "likelyConfusionPairs": [
+    {
+      "pair": "chop/cut-like vs repeated-tool-use-like",
+      "count": 2
+    },
+    {
+      "pair": "drink-like vs fingerspell/emphatic-letter-sequence-like",
+      "count": 2
+    },
+    {
+      "pair": "fingerspell/emphatic-letter-sequence-like vs impact/bounce-like",
+      "count": 2
+    },
+    {
+      "pair": "big-fall-like vs impact/bounce-like",
+      "count": 1
+    }
+  ],
+  "averageConfidenceMargin": 0.1791875
+}

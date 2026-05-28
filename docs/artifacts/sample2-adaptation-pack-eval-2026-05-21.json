@@ -1,0 +1,282 @@
+{
+  "id": "sample2-adaptation-eval-2026-05-21",
+  "generatedAt": "2026-05-21T17:21:42.451Z",
+  "sourceExport": "docs/artifacts/sample2-blind-after-round5-real-2026-04-26.json",
+  "lexiconSummary": {
+    "entries": 6,
+    "calibration": 4,
+    "holdout": 2
+  },
+  "pretrained": {
+    "transcript": "BOUNCE CHOP CHOP FALL HAMMER HAMMER SPELL FALL FALL SPELL",
+    "confidence": 0.5638978262289117,
+    "confidencePercent": 56,
+    "isLowConfidence": false,
+    "source": "pretrained",
+    "modelId": "sign-vocab-semantic-breadth@3",
+    "segments": [
+      {
+        "id": "seg-01",
+        "startMs": 0,
+        "endMs": 2166.67,
+        "family": "impact/bounce-like",
+        "text": "BOUNCE",
+        "confidence": 0.7901120771588085
+      },
+      {
+        "id": "seg-02",
+        "startMs": 2333.33,
+        "endMs": 5833.33,
+        "family": "chop/cut-like",
+        "text": "CHOP",
+        "confidence": 0.41721394185663896
+      },
+      {
+        "id": "seg-03",
+        "startMs": 6000,
+        "endMs": 8500,
+        "family": "chop/cut-like",
+        "text": "CHOP",
+        "confidence": 0.36917765558895965
+      },
+      {
+        "id": "seg-04",
+        "startMs": 8666.67,
+        "endMs": 10333.33,
+        "family": "big-fall-like",
+        "text": "FALL",
+        "confidence": 0.9321534714372381
+      },
+      {
+        "id": "seg-05",
+        "startMs": 10500,
+        "endMs": 13500,
+        "family": "repeated-tool-use-like",
+        "text": "HAMMER",
+        "confidence": 0.3584665809973517
+      },
+      {
+        "id": "seg-06",
+        "startMs": 13666.67,
+        "endMs": 15500,
+        "family": "repeated-tool-use-like",
+        "text": "HAMMER",
+        "confidence": 0.4387886190317599
+      },
+      {
+        "id": "seg-07",
+        "startMs": 15666.67,
+        "endMs": 17500,
+        "family": "fingerspell/emphatic-letter-sequence-like",
+        "text": "SPELL",
+        "confidence": 0.7486852828624491
+      },
+      {
+        "id": "seg-08",
+        "startMs": 17666.67,
+        "endMs": 19166.67,
+        "family": "big-fall-like",
+        "text": "FALL",
+        "confidence": 0.8295559502364951
+      },
+      {
+        "id": "seg-09",
+        "startMs": 19333.33,
+        "endMs": 20666.67,
+        "family": "big-fall-like",
+        "text": "FALL",
+        "confidence": 0.926082576120935
+      },
+      {
+        "id": "seg-10",
+        "startMs": 20833.33,
+        "endMs": 23166.67,
+        "family": "fingerspell/emphatic-letter-sequence-like",
+        "text": "SPELL",
+        "confidence": 0.7091617294194533
+      }
+    ]
+  },
+  "adapted": {
+    "transcript": "BOUNCE CHOP CHOP FALL-DOWN HAMMER HAMMER SPELL-NAME FALL-DOWN FALL-DOWN SPELL-NAME",
+    "confidence": 0.6138978262289118,
+    "confidencePercent": 61,
+    "isLowConfidence": false,
+    "lowConfidenceReason": null,
+    "source": "adapted",
+    "modelId": "adapted-over-sign-vocab-semantic-breadth@3",
+    "segments": [
+      {
+        "id": "seg-01",
+        "startMs": 0,
+        "endMs": 2166.67,
+        "family": "impact/bounce-like",
+        "text": "BOUNCE",
+        "confidence": 0.8401120771588085,
+        "customSignId": "custom-sign-bounce-0004"
+      },
+      {
+        "id": "seg-02",
+        "startMs": 2333.33,
+        "endMs": 5833.33,
+        "family": "chop/cut-like",
+        "text": "CHOP",
+        "confidence": 0.46721394185663895,
+        "customSignId": "custom-sign-chop-0001"
+      },
+      {
+        "id": "seg-03",
+        "startMs": 6000,
+        "endMs": 8500,
+        "family": "chop/cut-like",
+        "text": "CHOP",
+        "confidence": 0.41917765558895964,
+        "customSignId": "custom-sign-chop-0001"
+      },
+      {
+        "id": "seg-04",
+        "startMs": 8666.67,
+        "endMs": 10333.33,
+        "family": "big-fall-like",
+        "text": "FALL-DOWN",
+        "confidence": 0.9821534714372382,
+        "customSignId": "custom-sign-fall-down-0003"
+      },
+      {
+        "id": "seg-05",
+        "startMs": 10500,
+        "endMs": 13500,
+        "family": "repeated-tool-use-like",
+        "text": "HAMMER",
+        "confidence": 0.40846658099735167,
+        "customSignId": "custom-sign-hammer-0002"
+      },
+      {
+        "id": "seg-06",
+        "startMs": 13666.67,
+        "endMs": 15500,
+        "family": "repeated-tool-use-like",
+        "text": "HAMMER",
+        "confidence": 0.4887886190317599,
+        "customSignId": "custom-sign-hammer-0002"
+      },
+      {
+        "id": "seg-07",
+        "startMs": 15666.67,
+        "endMs": 17500,
+        "family": "fingerspell/emphatic-letter-sequence-like",
+        "text": "SPELL-NAME",
+        "confidence": 0.7986852828624491,
+        "customSignId": "custom-sign-spell-name-0005"
+      },
+      {
+        "id": "seg-08",
+        "startMs": 17666.67,
+        "endMs": 19166.67,
+        "family": "big-fall-like",
+        "text": "FALL-DOWN",
+        "confidence": 0.8795559502364951,
+        "customSignId": "custom-sign-fall-down-0003"
+      },
+      {
+        "id": "seg-09",
+        "startMs": 19333.33,
+        "endMs": 20666.67,
+        "family": "big-fall-like",
+        "text": "FALL-DOWN",
+        "confidence": 0.9760825761209351,
+        "customSignId": "custom-sign-fall-down-0003"
+      },
+      {
+        "id": "seg-10",
+        "startMs": 20833.33,
+        "endMs": 23166.67,
+        "family": "fingerspell/emphatic-letter-sequence-like",
+        "text": "SPELL-NAME",
+        "confidence": 0.7591617294194534,
+        "customSignId": "custom-sign-spell-name-0005"
+      }
+    ],
+    "adapterApplied": true,
+    "appliedCount": 10,
+    "baseTranscript": "BOUNCE CHOP CHOP FALL HAMMER HAMMER SPELL FALL FALL SPELL"
+  },
+  "diff": {
+    "baseTranscript": "BOUNCE CHOP CHOP FALL HAMMER HAMMER SPELL FALL FALL SPELL",
+    "adaptedTranscript": "BOUNCE CHOP CHOP FALL-DOWN HAMMER HAMMER SPELL-NAME FALL-DOWN FALL-DOWN SPELL-NAME",
+    "segmentsOverridden": [
+      {
+        "id": "seg-01",
+        "family": "impact/bounce-like",
+        "fromGloss": "BOUNCE",
+        "toLabel": "BOUNCE",
+        "customSignId": "custom-sign-bounce-0004"
+      },
+      {
+        "id": "seg-02",
+        "family": "chop/cut-like",
+        "fromGloss": "CHOP",
+        "toLabel": "CHOP",
+        "customSignId": "custom-sign-chop-0001"
+      },
+      {
+        "id": "seg-03",
+        "family": "chop/cut-like",
+        "fromGloss": "CHOP",
+        "toLabel": "CHOP",
+        "customSignId": "custom-sign-chop-0001"
+      },
+      {
+        "id": "seg-04",
+        "family": "big-fall-like",
+        "fromGloss": "FALL",
+        "toLabel": "FALL-DOWN",
+        "customSignId": "custom-sign-fall-down-0003"
+      },
+      {
+        "id": "seg-05",
+        "family": "repeated-tool-use-like",
+        "fromGloss": "HAMMER",
+        "toLabel": "HAMMER",
+        "customSignId": "custom-sign-hammer-0002"
+      },
+      {
+        "id": "seg-06",
+        "family": "repeated-tool-use-like",
+        "fromGloss": "HAMMER",
+        "toLabel": "HAMMER",
+        "customSignId": "custom-sign-hammer-0002"
+      },
+      {
+        "id": "seg-07",
+        "family": "fingerspell/emphatic-letter-sequence-like",
+        "fromGloss": "SPELL",
+        "toLabel": "SPELL-NAME",
+        "customSignId": "custom-sign-spell-name-0005"
+      },
+      {
+        "id": "seg-08",
+        "family": "big-fall-like",
+        "fromGloss": "FALL",
+        "toLabel": "FALL-DOWN",
+        "customSignId": "custom-sign-fall-down-0003"
+      },
+      {
+        "id": "seg-09",
+        "family": "big-fall-like",
+        "fromGloss": "FALL",
+        "toLabel": "FALL-DOWN",
+        "customSignId": "custom-sign-fall-down-0003"
+      },
+      {
+        "id": "seg-10",
+        "family": "fingerspell/emphatic-letter-sequence-like",
+        "fromGloss": "SPELL",
+        "toLabel": "SPELL-NAME",
+        "customSignId": "custom-sign-spell-name-0005"
+      }
+    ],
+    "confidenceDelta": 0.050000000000000044
+  },
+  "notes": "Demonstration adaptation pack. No raw video, no expected reference, no answer-key. Lexicon labels are hand-authored placeholders; calibration vs holdout splits preserved."
+}

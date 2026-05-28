@@ -1,0 +1,276 @@
+.shell {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 24px 20px 64px;
+    color: var(--ink);
+    font-family: var(--font-display), system-ui, sans-serif;
+}
+
+.header {
+    margin-bottom: 16px;
+}
+
+.title,
+.panelTitle {
+    margin: 0;
+}
+
+.title {
+    font-size: 28px;
+}
+
+.lead {
+    margin-top: 6px;
+    color: var(--muted);
+    line-height: 1.4;
+}
+
+.modeToggle,
+.actionRow,
+.resultMeta,
+.segmentCorrection {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.modeToggle {
+    margin-top: 12px;
+}
+
+.modeButton,
+.button {
+    padding: 6px 12px;
+    border-radius: var(--radius-sm);
+    font-size: 13px;
+    cursor: pointer;
+}
+
+.modeButton {
+    border: 1px solid var(--line);
+    background: transparent;
+    color: var(--ink);
+}
+
+.modeButtonActive {
+    border-color: var(--brand);
+    background: var(--brand);
+    color: white;
+}
+
+.button {
+    border: 1px solid var(--brand);
+    background: var(--brand);
+    color: white;
+}
+
+.buttonDisabled {
+    background: var(--line);
+    color: var(--muted);
+    cursor: not-allowed;
+}
+
+.panel {
+    background: var(--panel-strong);
+    border-radius: var(--radius-md);
+    padding: 16px;
+    box-shadow: var(--shadow);
+    margin-bottom: 16px;
+}
+
+.trainPanel {
+    margin-bottom: 0;
+}
+
+.panelTitle {
+    font-size: 18px;
+}
+
+.panelText {
+    margin-top: 6px;
+    margin-bottom: 10px;
+    font-size: 13px;
+    color: var(--muted);
+}
+
+.trainText {
+    margin-bottom: 12px;
+}
+
+.loaded {
+    margin-top: 8px;
+    font-size: 13px;
+    color: var(--success);
+}
+
+.error {
+    margin-top: 8px;
+    font-size: 13px;
+    color: var(--warn);
+}
+
+.buttonRow {
+    margin-top: 12px;
+}
+
+.resultMeta {
+    margin-top: 8px;
+    align-items: baseline;
+    gap: 12px;
+}
+
+.confidence {
+    font-size: 36px;
+    font-weight: 600;
+}
+
+.confidenceOk {
+    color: var(--success);
+}
+
+.confidenceWarn {
+    color: var(--warn);
+}
+
+.muted,
+.fieldLabel,
+.importText {
+    color: var(--muted);
+}
+
+.muted,
+.importText {
+    font-size: 13px;
+}
+
+.transcript {
+    margin-top: 12px;
+    font-size: 18px;
+    line-height: 1.4;
+}
+
+.lowConfidence {
+    margin-top: 8px;
+    padding: 8px;
+    border-radius: var(--radius-sm);
+    background: var(--brand-soft);
+    color: var(--ink);
+    font-size: 13px;
+}
+
+.alternatives,
+.segmentDetails,
+.actionRow {
+    margin-top: 12px;
+}
+
+.alternativesTitle {
+    margin-bottom: 4px;
+    font-size: 14px;
+}
+
+.alternativeList {
+    padding-left: 18px;
+    line-height: 1.5;
+}
+
+.segmentSummary {
+    cursor: pointer;
+    font-size: 13px;
+}
+
+.segmentList {
+    padding-left: 18px;
+    line-height: 1.5;
+    font-size: 13px;
+}
+
+.customBadge {
+    color: var(--success);
+}
+
+.trainGrid {
+    display: grid;
+    gap: 8px;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+}
+
+.field,
+.notesField {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.notesField {
+    margin-top: 8px;
+}
+
+.fieldLabel {
+    font-size: 12px;
+}
+
+.textInput,
+.select,
+.textarea,
+.correctionInput {
+    padding: 6px;
+    font-size: 13px;
+    font-family: inherit;
+}
+
+.textarea {
+    resize: vertical;
+}
+
+.importLabel {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.lexiconList {
+    list-style: none;
+    padding: 0;
+    margin: 12px 0 0;
+    display: grid;
+    gap: 8px;
+}
+
+.lexiconEntry {
+    border: 1px solid var(--line);
+    background: var(--panel);
+    border-radius: var(--radius-sm);
+    padding: 8px;
+    font-size: 13px;
+}
+
+.removeButton {
+    margin-left: 8px;
+    background: transparent;
+    border: none;
+    color: var(--warn);
+    cursor: pointer;
+    font-size: 12px;
+}
+
+.entryNotes {
+    color: var(--muted);
+}
+
+.emptyState {
+    margin-top: 12px;
+    font-size: 13px;
+    color: var(--muted);
+}
+
+.segmentCorrection {
+    margin-top: 4px;
+    gap: 4px;
+}
+
+.correctionInput {
+    padding: 4px;
+    font-size: 12px;
+    flex: 1;
+}

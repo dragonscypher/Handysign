@@ -1,0 +1,44 @@
+{
+  "schemaVersion": 1,
+  "id": "local-head-training-manifest-2026-05-28",
+  "createdAt": "2026-05-28",
+  "purpose": "Manifest-driven local head training plan. It keeps the active v4 fallback untouched while making the learned candidate path ready for multiple privacy-safe labeled blind exports.",
+  "privacy": {
+    "rawVideoStored": false,
+    "pixelDataStored": false,
+    "landmarkOnly": true,
+    "sample3ExcludedFromTraining": true,
+    "usedHumanTranscript": false,
+    "usedExpectedReference": false,
+    "usedAnswerKey": false
+  },
+  "trainingSets": [
+    {
+      "id": "sample2-train-mode-2026-05-28",
+      "blindExport": "docs/artifacts/sample2-blind-after-round5-real-2026-04-26.json",
+      "lexicon": "docs/artifacts/sample2-adaptation-pack-2026-05-28.json",
+      "role": "calibration-and-holdout-label-source",
+      "notes": "Only currently available privacy-safe labeled real-browser export. More local labeled blind exports should be appended here before activation is considered."
+    }
+  ],
+  "blockedTrainingSources": [
+    {
+      "id": "sample3-blind-validation",
+      "blindExport": "docs/artifacts/sample3-blind-2026-05-21.json",
+      "reason": "Sample 3 is the blind structural validation clip. It must never be used for training, labeling, or calibration."
+    }
+  ],
+  "activationGate": {
+    "mustPreserveActiveV4Confidence": true,
+    "mustPreserveSegmentsAbove55": true,
+    "mustPreserveSemanticBreadth": true,
+    "mustKeepSample3Excluded": true,
+    "minimumSupervisedBreadthBeforeActivation": {
+      "trainingSets": 2,
+      "labeledSegments": 24,
+      "uniqueFamilies": 8,
+      "uniqueLabels": 10,
+      "uniqueConcepts": 6
+    }
+  }
+}

@@ -1,0 +1,150 @@
+{
+    "note": "Code-level synthesis of round-4 decoder rule additions. Real after-round-4 export must be regenerated via the browser /verify flow because blind inference runs in-browser only (MediaPipe + WebGL). The 'before-round-4' artifacts are byte-identical to the real after-round-3 export and remain the verified ground truth for the code prior to round-4 rules.",
+    "round": "round-4",
+    "clipName": "sample 2.mp4",
+    "baselineArtifact": "docs/artifacts/sample2-blind-before-round4-2026-04-26.json",
+    "baselineSummary": "docs/artifacts/sample2-blind-before-round4-summary-2026-04-26.json",
+    "baselineFamilyCounts": {
+        "big-fall-like": 4,
+        "chop/cut-like": 3,
+        "fingerspell/emphatic-letter-sequence-like": 2,
+        "impact/bounce-like": 1
+    },
+    "baselineConfusionPairs": [
+        {
+            "pair": "chop/cut-like vs fingerspell/emphatic-letter-sequence-like",
+            "count": 2
+        },
+        {
+            "pair": "big-fall-like vs chop/cut-like",
+            "count": 1
+        },
+        {
+            "pair": "big-fall-like vs drink-like",
+            "count": 1
+        },
+        {
+            "pair": "big-fall-like vs fingerspell/emphatic-letter-sequence-like",
+            "count": 1
+        }
+    ],
+    "baselineTightSegments": [
+        {
+            "id": "seg-06",
+            "family": "big-fall-like",
+            "runnerUp": "chop/cut-like",
+            "margin": 0
+        },
+        {
+            "id": "seg-04",
+            "family": "big-fall-like",
+            "runnerUp": "impact/bounce-like",
+            "margin": 0.0179
+        },
+        {
+            "id": "seg-01",
+            "family": "impact/bounce-like",
+            "runnerUp": "walk/continue-like",
+            "margin": 0.0584
+        }
+    ],
+    "newRerankRules": [
+        {
+            "id": "round-4-rule-A",
+            "targetPair": "big-fall-like vs chop/cut-like",
+            "behavior": "Undo over-eager chop -> big-fall promotion when release/aftermath are weak, repeated strokes are present, compact handshape changes are embedded, directional consistency is low, and the margin collapsed near zero. Demote big-fall to repeated-tool-use-like instead of leaving the chop/big-fall pair tied.",
+            "guards": {
+                "primaryLabel": "big-fall-like",
+                "runnerUpLabel": "chop/cut-like",
+                "repeatedStrokeCount>=": 2,
+                "reactionAftermathScore<=": 0.34,
+                "releaseRatio<=": 0.16,
+                "compactShapeBurstScore>=": 0.4,
+                "confidenceMargin<=": 0.05,
+                "repeatedToolScore>=": "bigFallScore - 0.12",
+                "directionalStrokeConsistency<": 0.6
+            },
+            "expectedImpactOnSample2": "seg-06 (currently big-fall-like vs chop/cut-like, margin 0, motif tags include repeated-action-loop) is the strongest candidate to flip to repeated-tool-use-like under this rule. Removes the only big-fall-like vs chop/cut-like confusion entry."
+        },
+        {
+            "id": "round-4-rule-B",
+            "targetPair": "chop/cut-like vs fingerspell/emphatic-letter-sequence-like",
+            "behavior": "Sharpening boost (no swap). When chop/cut-like already wins with narrow consistent vertical strokes, boost chop and reduce fingerspell so the margin widens past the low-confidence-competition threshold. Re-rank afterward.",
+            "guards": {
+                "primaryLabel": "chop/cut-like",
+                "runnerUpLabel": "fingerspell/emphatic-letter-sequence-like",
+                "repeatedStrokeCount>=": 2,
+                "directionalStrokeConsistency>=": 0.55,
+                "strokeAmplitudeConsistency>=": 0.5,
+                "verticalBias>=": 0.55,
+                "compactShapeBurstScore>=": 0.4,
+                "reactionAftermathScore<=": 0.4
+            },
+            "scoreDeltas": {
+                "chop/cut-like": "+0.06",
+                "fingerspell/emphatic-letter-sequence-like": "-0.06"
+            },
+            "expectedImpactOnSample2": "seg-02 / seg-03 (currently chop/cut-like, runner-up fingerspell, margins 0.097 / 0.0927, motif tags include repeated-action-loop and repeated-compact-handshape-sequence). Either the rule fires and widens margins past 0.097 + 0.06 = ~0.16 (clear of low-confidence-competition for the pair), or the directional/amplitude consistency is below 0.55 / 0.5 and the rule does not fire (no regression). Confusion-pair count for chop/cut-like vs fingerspell expected to drop from 2 toward 1 or 0."
+        },
+        {
+            "id": "round-4-rule-C",
+            "targetPair": "big-fall-like vs fingerspell/emphatic-letter-sequence-like",
+            "behavior": "Sharpening boost (no swap). When big-fall-like already wins with strong release plus rebound aftermath and unstable end-state, boost big-fall and reduce fingerspell so the margin widens.",
+            "guards": {
+                "primaryLabel": "big-fall-like",
+                "runnerUpLabel": "fingerspell/emphatic-letter-sequence-like",
+                "releaseRatio>=": 0.18,
+                "reactionAftermathScore>=": 0.34,
+                "endStateStabilization<=": 0.5,
+                "fingerSpellScore>=": "bigFallScore - 0.18"
+            },
+            "scoreDeltas": {
+                "big-fall-like": "+0.04",
+                "fingerspell/emphatic-letter-sequence-like": "-0.06"
+            },
+            "expectedImpactOnSample2": "seg-08 (big-fall-like vs fingerspell, margin 0.145). If rule fires, margin widens to ~0.21+; if release/aftermath thresholds fail, no flip and no regression. Mirrors round-3 rule C (which demotes big-fall when bursts dominate without release)."
+        }
+    ],
+    "expectedFamilyCountDeltas": {
+        "big-fall-like": "-1 (seg-06 likely flips to repeated-tool-use-like)",
+        "chop/cut-like": "0 (kept; sharper margin)",
+        "repeated-tool-use-like": "+1",
+        "fingerspell/emphatic-letter-sequence-like": "0",
+        "impact/bounce-like": "0",
+        "approval/celebration-like": "0",
+        "phone/call-like": "0"
+    },
+    "expectedConfusionPairDeltas": {
+        "chop/cut-like vs fingerspell/emphatic-letter-sequence-like": "2 -> 1 or 0 (rule B widens margin past competition threshold)",
+        "big-fall-like vs chop/cut-like": "1 -> 0 (rule A demotes big-fall)",
+        "big-fall-like vs drink-like": "1 -> 1 (unchanged; not targeted)",
+        "big-fall-like vs fingerspell/emphatic-letter-sequence-like": "1 -> 0 or 1 (rule C widens margin if release/aftermath thresholds met)"
+    },
+    "expectedFailureTagDeltas": {
+        "low-confidence-competition": "10 -> 7..9 (depends on how many margins widen past the tag threshold)",
+        "tool-use-vs-release-confusion": "3 -> 2 (seg-06 may shed this tag after flip)",
+        "hand-visibility-weak": "5 -> 5 (not targeted)",
+        "mouth-face-cue-weak": "1 -> 1 (not targeted)"
+    },
+    "blindPurity": {
+        "usesTranscript": false,
+        "usesExpectedReference": false,
+        "usesConceptMapping": false,
+        "usesHiddenAnswerKey": false,
+        "usesTimestampLabelRule": false
+    },
+    "filesTouched": [
+        "src/lib/recognition/BlindSemanticDecoder.ts",
+        "src/tests/BlindSemanticDecoder.test.ts",
+        "docs/LLM_HANDOFF.md",
+        "docs/artifacts/sample2-blind-before-round4-2026-04-26.json",
+        "docs/artifacts/sample2-blind-before-round4-summary-2026-04-26.json",
+        "docs/artifacts/sample2-blind-after-round4-synthesis-2026-04-26.json"
+    ],
+    "checksPassed": [
+        "npm run lint",
+        "npm run test (141 / 141)",
+        "npm run build",
+        "npm run e2e (17 / 17)"
+    ]
+}
