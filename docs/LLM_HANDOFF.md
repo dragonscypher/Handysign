@@ -44,7 +44,9 @@ Round 15 moved the learned local-head path from a one-off sample-2 trainer towar
 ### Public push safety status
 
 - Branch before push prep: `master`.
-- Remote before push prep: none configured. Intended public target: `https://github.com/dragonscypher/Handysign`.
+- Remote before push prep: none configured. `origin` was set to `https://github.com/dragonscypher/Handysign`.
+- Public push completed: branch `master` pushed to `origin/master`.
+- Main public-safe work commit: `22431e2` (`feat: publish local signrepair prototype`).
 - Local raw media intentionally excluded: `sample 2.mp4`, `sample 3.mp4`, and existing `sample clip.mp4` ignore rule.
 - Non-build, non-media scrub for personal Windows absolute-path markers: no output after redaction.
 - Non-build, non-media scrub for common sensitive-keyword markers and private-key headers: no output.
